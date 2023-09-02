@@ -33,6 +33,7 @@
     clash
     ntfs3g
     openssh
+    cloc
   ];
 
   environment.variables.EDITOR = "vim";
