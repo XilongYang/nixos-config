@@ -24,8 +24,6 @@
       text-scaling-factor = 1.3;
     };
     "org/gnome/desktop/wm/keybindings" = { 
-      switch-input-source-backward = [];
-      switch-input-source = [];
     };
   };
 
