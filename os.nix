@@ -37,6 +37,12 @@
 
   environment.variables.EDITOR = "vim";
 
+  # Input Method
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ rime ];
+  };
+
   # Systemd config
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=5s
