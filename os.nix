@@ -33,6 +33,10 @@
     ntfs3g
     openssh
     cloc
+    gcc
+    gdb
+    g++
+    ghc
   ];
 
   environment.variables.EDITOR = "vim";
