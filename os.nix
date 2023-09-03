@@ -39,6 +39,7 @@
     gcc
     gdb
     ghc
+    stack
     racket
   ];
 
