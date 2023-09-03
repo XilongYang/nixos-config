@@ -56,6 +56,12 @@
     ibus.engines = with pkgs.ibus-engines; [ rime ];
   };
 
+  # Fonts
+  fonts.fonts = with pkgs; [
+    wqy_zenhei
+    jetbrains-mono
+  ];
+
   # Systemd config
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=5s
