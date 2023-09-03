@@ -21,7 +21,11 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = { 
       color-scheme = "prefer-dark";
-      text-scaling-factor = 1.5;
+      text-scaling-factor = 1.3;
+    };
+    "org/gnome/desktop/wm/keybindings" = { 
+      switch-input-source-backward = [];
+      switch-input-source = [];
     };
   };
 
