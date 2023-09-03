@@ -37,6 +37,14 @@
 
   environment.variables.EDITOR = "vim";
 
+  # Locales
+  i18n.supportedLocales = [
+  "C.UTF-8"
+  "en_US.UTF-8"
+  "zh_CN.UTF-8"
+  ];
+  i18n.defaultLocale = "en_US.UTF-8";
+
   # Input Method
   i18n.inputMethod = {
     enabled = "ibus";
