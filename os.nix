@@ -35,7 +35,6 @@
     cloc
     gcc
     gdb
-    g++
     ghc
   ];
 
