@@ -38,6 +38,7 @@
     gcc
     gdb
     ghc
+    racket
   ];
 
   environment.variables.EDITOR = "vim";
