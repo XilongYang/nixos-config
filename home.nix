@@ -31,8 +31,8 @@
 
   # Input Method
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-rime ];
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ rime ];
   };
 
   # This value determines the Home Manager release that your
