@@ -19,7 +19,6 @@
   users = {
     users.xilong = {
       isNormalUser = true;
-      group = "xilong";
       extraGroups = [ "wheel" "networkmanager"]; 
     };
   };
