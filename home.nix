@@ -17,6 +17,12 @@
     firefox-esr
   ];
 
+  # Gnome Settings
+  dconf.settings = {
+    "/org/gnome/desktop/interface/color-scheme" = "prefer-dark";
+    "/org/gnome/desktop/interface/text-scaling-factor" = "1.25";
+  };
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
