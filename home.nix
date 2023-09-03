@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     neofetch
     firefox-esr
+    obsidian
   ];
 
   # Gnome Settings
