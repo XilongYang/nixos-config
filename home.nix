@@ -19,8 +19,10 @@
 
   # Gnome Settings
   dconf.settings = {
-    "/org/gnome/desktop/interface/color-scheme" = "prefer-dark";
-    "/org/gnome/desktop/interface/text-scaling-factor" = "1.25";
+    "/org/gnome/desktop/interface" = { 
+      color-scheme = "prefer-dark";
+      text-scaling-factor = 1.25;
+    };
   };
 
   # This value determines the Home Manager release that your
