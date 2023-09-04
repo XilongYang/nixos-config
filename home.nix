@@ -1,4 +1,7 @@
-{config, pkgs, ...}:
+{config, pkgs, lib, ...}:
+let
+  mkTuple = lib.hm.gvariant.mkTuple;
+in
 {
   home.username = "xilong";
   home.homeDirectory = "/home/xilong";
