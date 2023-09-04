@@ -25,7 +25,7 @@
       text-scaling-factor = 1.3;
     };
     "org/gnome/desktop/input-sources" = { 
-      sources = [("xkb", "us"), ("ibus", "rime")];
+      sources = [ ("xkb", "us") ("ibus", "rime")];
       per-window = true;
     };
     "org/gnome/setting-daemon/plugins/media-keys" = { 
