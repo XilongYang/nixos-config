@@ -32,10 +32,9 @@ in
       per-window = true;
     };
     "org/gnome/setting-daemon/plugins/media-keys" = { 
-      home @as [];
-      home = [ "<Super>e" ];
-      search = [ "<Super>r" ];
-      control-center = [ "<Super>i" ];
+      home = "[ '<Super>e' ]";
+      search = "[ '<Super>r' ]";
+      control-center = "[ '<Super>i' ]";
       custom-keybindings = [
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0"
       ];
