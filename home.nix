@@ -23,9 +23,6 @@ in
   ];
 
   # Gnome Settings
-  program.dconf = {
-    enable = true;
-  };
   dconf.settings = {
     "org/gnome/desktop/interface" = { 
       color-scheme = "prefer-dark";
@@ -35,18 +32,18 @@ in
       sources = [ (mkTuple ["xkb" "us"]) (mkTuple ["ibus" "rime"]) ];
       per-window = true;
     };
-    "org/gnome/setting-daemon/plugins/media-keys" = { 
+    "org/gnome/settings-daemon/plugins/media-keys" = { 
       home = [ "<Super>e" ];
       search = [ "<Super>r" ];
       control-center = [ "<Super>i" ];
       custom-keybindings = [
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0"
       ];
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
-      command = "kgx";
-      name = "terminal";
+      custom0 = {
+        binding = "<Super>Return";
+        command = "kgx";
+        name = "terminal";
+      };
     };
   };
 
