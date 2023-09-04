@@ -19,6 +19,7 @@ in
     neofetch
     firefox-esr
     obsidian
+    telegram-desktop
   ];
 
   # Gnome Settings
