@@ -14,6 +14,7 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  programs.dconf.enable = true;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
