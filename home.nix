@@ -39,11 +39,11 @@ in
       custom-keybindings = [
         "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0"
       ];
-      custom0 = {
-        binding = "<Super>Return";
-        command = "kgx";
-        name = "terminal";
-      };
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "kgx";
+      name = "terminal";
     };
   };
 
