@@ -35,13 +35,14 @@ in
       home = ["<Super>e"];
       search = ["<Super>r"];
       control-center = ["<Super>i"];
-      custom-keybindings = {
-        custom0 = {
-          binding = "<Super>Return";
-          command = "kgx";
-          name = "terminal";
-        };
-      };
+      custom-keybindings = [
+        "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>Return";
+      command = "kgx";
+      name = "terminal";
     };
   };
 
