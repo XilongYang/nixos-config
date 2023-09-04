@@ -24,7 +24,21 @@
       color-scheme = "prefer-dark";
       text-scaling-factor = 1.3;
     };
-    "org/gnome/desktop/wm/keybindings" = { 
+    "org/gnome/desktop/input-sources" = { 
+      sources = [("xkb", "us"), ("ibus", "rime")];
+      per-window = true;
+    };
+    "org/gnome/setting-daemon/plugins/media-keys" = { 
+      home = ["<Super>e"];
+      search = ["<Super>r"];
+      control-center = ["<Super>i"];
+      custom-keybindings = {
+        custom0 = {
+          binding = "<Super>Return";
+          command = "kgx";
+          name = "terminal";
+        };
+      };
     };
   };
 
