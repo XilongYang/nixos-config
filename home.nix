@@ -80,6 +80,7 @@ in
       home = [ "<Super>e" ];
       search = [ "<Super>r" ];
       control-center = [ "<Super>i" ];
+      screensaver = [ "<Control><Alt>l" ];
 
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
