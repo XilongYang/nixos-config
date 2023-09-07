@@ -64,6 +64,14 @@ in
       switch-windows-backward = ["<Shift><Alt>Tab"];
       switch-to-workspace-left = ["<Shift><Super>h"];
       switch-to-workspace-right = ["<Shift><Super>l"];
+      minimize = ["<Shift><Super>j"];
+      maximize = ["<Super>k"];
+      unmaximize = ["<Super>j"];
+      toggle-fullscreen = ["<Super>f"];
+    };
+    "org/gnome/mutter/keybindings" = { 
+      toggle-tiled-left = ["<Super>h"];
+      toggle-tiled-right = ["<Super>l"];
     };
     "org/gnome/settings-daemon/plugins/media-keys" = { 
       home = [ "<Super>e" ];
