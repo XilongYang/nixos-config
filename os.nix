@@ -38,8 +38,8 @@
     cloc
     gcc
     gdb
-    ghc
-    stack
+    cmake
+    gnumake
     racket
   ];
 

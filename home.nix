@@ -21,6 +21,7 @@ in
     obsidian
     telegram-desktop
     flameshot
+    gimp
   ];
 
   # Gnome Settings
