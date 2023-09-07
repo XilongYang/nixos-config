@@ -68,6 +68,8 @@ in
       maximize = ["<Super>k"];
       unmaximize = ["<Super>j"];
       toggle-fullscreen = ["<Super>f"];
+      switch-input-source = ["<Super>space"];
+      switch-input-source-backward = ["<Shift><Super>space"];
     };
     "org/gnome/mutter/keybindings" = { 
       toggle-tiled-left = ["<Super>h"];
