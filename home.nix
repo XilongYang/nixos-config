@@ -32,6 +32,17 @@ in
       sources = [ (mkTuple ["xkb" "us"]) (mkTuple ["ibus" "rime"]) ];
       per-window = true;
     };
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [];
+      switch-to-application-2 = [];
+      switch-to-application-3 = [];
+      switch-to-application-4 = [];
+      switch-to-application-5 = [];
+      switch-to-application-6 = [];
+      switch-to-application-7 = [];
+      switch-to-application-8 = [];
+      switch-to-application-9 = [];
+    };
     "org/gnome/settings-daemon/plugins/media-keys" = { 
       home = [ "<Super>e" ];
       search = [ "<Super>r" ];
