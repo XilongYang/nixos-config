@@ -52,6 +52,7 @@ in
   qt = {
     enable = true;
     platformTheme = "gnome";
+    style.name = "adwaita-dark";
   };
 
   # This value determines the Home Manager release that your
