@@ -35,6 +35,7 @@ in
     "org/gnome/settings-daemon/plugins/media-keys" = { 
       home = [ "<Super>e" ];
       search = [ "<Super>r" ];
+      control-center = [ "<Super>i" ];
 
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -45,6 +46,12 @@ in
       command = "kgx";
       name = "terminal";
     };
+  };
+
+  # QT
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
   };
 
   # This value determines the Home Manager release that your
