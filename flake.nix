@@ -24,7 +24,6 @@
           ./network.nix
           ./os.nix
           ./boot.nix
-          ./clash.nix
 
           home-manager.nixosModules.home-manager
           {
