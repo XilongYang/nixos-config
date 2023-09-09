@@ -15,6 +15,15 @@ in
     userEmail = "xilong.yang@foxmail.com";
   };
 
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "kardan";
+      plugins = ["git"];
+    };
+  };
+
   home.packages = with pkgs; [
     neofetch
     firefox-esr
@@ -71,6 +80,9 @@ in
       toggle-fullscreen = ["<Super>f"];
       switch-input-source = ["<Super>space"];
       switch-input-source-backward = ["<Shift><Super>space"];
+    };
+    "org/gnome/desktop/input-sources" = { 
+      xkb-options = ["lv3:ralt_alt"];
     };
     "org/gnome/mutter/keybindings" = { 
       toggle-tiled-left = ["<Super>h"];

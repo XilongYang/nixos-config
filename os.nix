@@ -16,10 +16,12 @@
   services.xserver.desktopManager.gnome.enable = true;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.zsh.enable = true;
   users = {
     users.xilong = {
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager"]; 
+      shell = pkgs.zsh;
     };
   };
 
@@ -29,6 +31,7 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    zsh
     vim 
     wget
     git
