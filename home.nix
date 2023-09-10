@@ -31,7 +31,6 @@ in
     telegram-desktop
     flameshot
     gimp
-    dropbox
   ];
 
   # Gnome Settings
