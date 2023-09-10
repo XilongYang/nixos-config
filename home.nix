@@ -31,6 +31,8 @@ in
     telegram-desktop
     flameshot
     gimp
+    megasync
+    gnomeExtensions.appindicator
   ];
 
   # Gnome Settings
