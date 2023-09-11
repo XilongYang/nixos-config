@@ -44,6 +44,7 @@
     cmake
     gnumake
     racket
+    nodejs_18
   ];
 
   environment.variables.EDITOR = "vim";

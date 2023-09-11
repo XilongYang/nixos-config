@@ -17,6 +17,9 @@ in
 
   programs.zsh = {
     enable = true;
+    initExtra = ''
+      PATH=$PATH:/home/xilong/.local/bin
+    '';
     oh-my-zsh = {
       enable = true;
       theme = "kardan";
@@ -31,8 +34,10 @@ in
     telegram-desktop
     flameshot
     gimp
-    megasync
+    maestral-gui
     gnomeExtensions.appindicator
+    gnome.gnome-tweaks
+    vscode-fhs
   ];
 
   # Gnome Settings
@@ -44,6 +49,9 @@ in
     "org/gnome/desktop/input-sources" = { 
       sources = [ (mkTuple ["xkb" "us"]) (mkTuple ["ibus" "rime"]) ];
       per-window = true;
+    };
+    "org/gnome/shell" = {
+      enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
     };
     "org/gnome/shell/keybindings" = {
       switch-to-application-1 = [];
