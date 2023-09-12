@@ -48,7 +48,7 @@
     qgnomeplatform
     adwaita-qt
     appimage-run
-    python
+    python3Full
   ];
 
   environment.variables.EDITOR = "vim";
