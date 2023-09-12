@@ -45,6 +45,8 @@
     gnumake
     racket
     nodejs_18
+    qgnomeplatform
+    adwaita-qt
   ];
 
   environment.variables.EDITOR = "vim";
@@ -78,6 +80,13 @@
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 1w";
+  };
+
+  # QT
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
   };
 
   # This value determines the NixOS release from which the default

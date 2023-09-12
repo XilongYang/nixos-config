@@ -38,6 +38,7 @@ in
     gnomeExtensions.appindicator
     gnome.gnome-tweaks
     vscode-fhs
+    octaveFull
   ];
 
   # Gnome Settings
@@ -125,13 +126,6 @@ in
       command = "flameshot gui";
       name = "scrennshot";
     };
-  };
-
-  # QT
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style.name = "adwaita-dark";
   };
 
   # This value determines the Home Manager release that your
