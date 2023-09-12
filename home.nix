@@ -39,6 +39,7 @@ in
     gnome.gnome-tweaks
     vscode-fhs
     octaveFull
+    obs-studio
   ];
 
   # Gnome Settings

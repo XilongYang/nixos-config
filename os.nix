@@ -47,6 +47,8 @@
     nodejs_18
     qgnomeplatform
     adwaita-qt
+    appimage-run
+    python
   ];
 
   environment.variables.EDITOR = "vim";
