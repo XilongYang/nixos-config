@@ -40,6 +40,7 @@ in
     vscode-fhs
     octaveFull
     obs-studio
+    wpsoffice-cn
   ];
 
   # Gnome Settings

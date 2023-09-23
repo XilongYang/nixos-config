@@ -49,7 +49,7 @@
     adwaita-qt
     appimage-run
     python3Full
-    stack
+    ghc
   ];
 
   environment.variables.EDITOR = "vim";
