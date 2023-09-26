@@ -50,6 +50,7 @@
     appimage-run
     python3Full
     ghc
+    uzip
   ];
 
   environment.variables.EDITOR = "vim";
