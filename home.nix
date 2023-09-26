@@ -41,6 +41,7 @@ in
     octaveFull
     obs-studio
     wpsoffice-cn
+    godot_4
   ];
 
   # Gnome Settings
