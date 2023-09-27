@@ -42,6 +42,7 @@ in
     obs-studio
     wpsoffice-cn
     godot_4
+    aseprite
   ];
 
   # Gnome Settings
