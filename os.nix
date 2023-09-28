@@ -10,6 +10,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = ["amdgpu"];
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -78,6 +79,11 @@
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=5s
   '';
+  
+  # HIP
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.hip}"
+  ];
 
   # NixOS GC
   nix.gc = {
