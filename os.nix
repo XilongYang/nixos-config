@@ -52,6 +52,8 @@
     python3Full
     ghc
     unzip
+    dev86
+    bochs
   ];
 
   environment.variables.EDITOR = "vim";
