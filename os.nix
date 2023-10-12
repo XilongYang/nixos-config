@@ -54,6 +54,7 @@
     unzip
     dev86
     bochs
+    findutils
   ];
 
   environment.variables.EDITOR = "vim";

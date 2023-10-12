@@ -43,6 +43,7 @@ in
     wpsoffice-cn
     godot_4
     aseprite
+    thunderbird
   ];
 
   # Gnome Settings
