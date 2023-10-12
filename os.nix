@@ -55,6 +55,7 @@
     dev86
     bochs
     findutils
+    mlocate
   ];
 
   environment.variables.EDITOR = "vim";
