@@ -15,6 +15,9 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  # Enable the locate & updatedb
+  services.locate.enable = true;
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.zsh.enable = true;
@@ -55,7 +58,7 @@
     dev86
     bochs
     findutils
-    mlocate
+    gtk4
   ];
 
   environment.variables.EDITOR = "vim";
