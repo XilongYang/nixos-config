@@ -28,13 +28,13 @@ in
       xproxy(){
         if [ $http_proxy -o $https_proxy ]
         then
-          export http_proxy="http://127.0.0.1:7890"
-          export https_proxy="http://127.0.0.1:7890"
-          echo "proxy_on"
-        else
           unset http_proxy
           unset https_proxy
           echo "proxy_off"
+        else
+          export http_proxy="http://127.0.0.1:7890"
+          export https_proxy="http://127.0.0.1:7890"
+          echo "proxy_on"
         fi
       }
     '';
