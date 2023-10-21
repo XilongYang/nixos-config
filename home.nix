@@ -17,8 +17,26 @@ in
 
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      xnix-history = "nix profile history --profile /nix/var/nix/profiles/system";
+      xnix-clear = "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 14d";
+      xnix-gc = "sudo nix store gc --debug";
+    };
     initExtra = ''
       PATH=$PATH:/home/xilong/.local/bin
+
+      xproxy(){
+        if [ $http_proxy -o $https_proxy ]
+        then
+          export http_proxy="http://127.0.0.1:7890"
+          export https_proxy="http://127.0.0.1:7890"
+          echo "proxy_on"
+        else
+          unset http_proxy
+          unset https_proxy
+          echo "proxy_off"
+        fi
+      }
     '';
     oh-my-zsh = {
       enable = true;
