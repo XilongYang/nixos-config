@@ -58,7 +58,6 @@
     dev86
     bochs
     findutils
-    gtk4
   ];
 
   environment.variables.EDITOR = "vim";

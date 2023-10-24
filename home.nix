@@ -26,7 +26,7 @@ in
       PATH=$PATH:/home/xilong/.local/bin
 
       xproxy(){
-        if [ $http_proxy -o $https_proxy ]
+        if [ $http_proxy ]
         then
           unset http_proxy
           unset https_proxy
