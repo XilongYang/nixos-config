@@ -48,7 +48,6 @@ in
   home.packages = with pkgs; [
     neofetch
     firefox-esr
-    obsidian
     telegram-desktop
     flameshot
     gimp
@@ -62,6 +61,7 @@ in
     godot_4
     aseprite
     thunderbird
+    logseq
   ];
 
   # Gnome Settings

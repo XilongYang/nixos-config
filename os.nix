@@ -58,6 +58,7 @@
     dev86
     bochs
     findutils
+    clang-tools_16
   ];
 
   environment.variables.EDITOR = "vim";
