@@ -59,6 +59,8 @@
     bochs
     findutils
     clang-tools_16
+    xorg.xhost
+    docker-compose
   ];
 
   environment.variables.EDITOR = "vim";
