@@ -61,6 +61,7 @@
     clang-tools_16
     xorg.xhost
     docker-compose
+    rclone
   ];
 
   environment.variables.EDITOR = "vim";
