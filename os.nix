@@ -112,6 +112,7 @@
     source-han-serif
     wqy_zenhei
     jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   # HIP
