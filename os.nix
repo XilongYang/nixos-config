@@ -130,6 +130,9 @@
     rclone
     powertop
     sioyek
+    wl-clipboard
+    nodejs
+    marksman
   ];
 
   environment.variables.EDITOR = "nvim";
