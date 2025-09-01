@@ -36,13 +36,9 @@ in
   home.packages = with pkgs; [
     fastfetch
     firefox-esr
-    telegram-desktop
-    gimp
     gnomeExtensions.appindicator
     gnome-tweaks
-    vscode-fhs
     octaveFull
-    obs-studio
   ];
 
   # Gnome Settings
