@@ -51,7 +51,7 @@
 
   # TLP
   services.tlp = {
-    enable = false;
+    enable = true;
     settings = {
       TLP_DEFAULT_MODE = "BAT";
       TLP_PERSISTENT_DEFAULT = 1;
@@ -108,6 +108,7 @@
     git
     ntfs3g
     openssh
+    mandoc
     cloc
     gcc
     gdb
@@ -128,6 +129,7 @@
     docker-compose
     rclone
     powertop
+    sioyek
   ];
 
   environment.variables.EDITOR = "nvim";
