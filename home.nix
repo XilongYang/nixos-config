@@ -46,6 +46,14 @@ in
     "org/gnome/desktop/interface" = { 
       color-scheme = "prefer-dark";
     };
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "firefox.desktop"
+        "org.gnome.Terminal.desktop"
+        "org.gnome.Nautilus.desktop"
+        "code.desktop"
+      ];
+    };
     "org/gnome/desktop/input-sources" = { 
       sources = [ (mkTuple ["xkb" "us"]) (mkTuple ["ibus" "rime"]) ];
       per-window = true;
@@ -64,8 +72,8 @@ in
       switch-to-application-8 = [];
       switch-to-application-9 = [];
       show-screen-recording-ui = [];
-      screenshot = [];
-      show-screenshot-ui = [];
+      screenshot = ["Print"];
+      show-screenshot-ui = ["<Shift><Super>s"];
       screenshot-window = [];
     };
     "org/gnome/desktop/wm/keybindings" = {
@@ -106,24 +114,12 @@ in
 
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
       ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
       command = "kgx";
       name = "terminal";
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = "<Shift><Super>s";
-      command = "flameshot gui";
-      name = "scrennshot";
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      binding = "Print";
-      command = "flameshot gui";
-      name = "scrennshot";
     };
   };
 
