@@ -133,6 +133,11 @@
     wl-clipboard
     nodejs
     marksman
+    fastfetch
+    firefox-esr
+    gnomeExtensions.appindicator
+    gnome-tweaks
+    octaveFull
   ];
 
   environment.variables.EDITOR = "nvim";
