@@ -33,6 +33,19 @@ in
     };
   };
 
+  home.packages = with pkgs; [
+    chibi-scheme
+    fastfetch
+    firefox-esr
+    gnome-tweaks
+    gnomeExtensions.appindicator
+    marksman
+    neovim
+    octaveFull
+    rclone
+    sioyek
+  ];
+
   # Gnome Settings
   dconf.settings = {
     "org/gnome/desktop/interface" = { 
