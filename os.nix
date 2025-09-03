@@ -10,6 +10,9 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.excludePackages = with pkgs; [
+    xterm
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -18,7 +21,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -42,6 +45,27 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-maps
+    gnome-weather
+    gnome-contacts
+    gnome-music
+    gnome-photos
+    gnome-clocks
+    gnome-connections
+    gnome-software
+    decibels # Audio
+    epiphany # Browser
+    geary # Mail
+    totem # Video
+    evince # PDF
+    simple-scan
+    snapshot
+    yelp
+    seahorse # Password
+  ];
 
   # Enable the locate & updatedb
   services.locate.enable = true;
@@ -108,6 +132,7 @@
     clang-tools_16
     cloc
     cmake
+    dconf-editor
     dev86
     docker-compose
     findutils
@@ -116,6 +141,7 @@
     ghc
     git
     gnumake
+    letterpress
     mandoc
     nodejs
     ntfs3g
