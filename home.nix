@@ -22,6 +22,7 @@ in
       xnix-clear = "sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 14d";
       xnix-gc = "sudo nix store gc --debug";
       vim = "nvim";
+      note = "cd ~/Notes/ && vim README.md";
     };
     initContent = ''
       PATH=$PATH:/home/xilong/.local/bin
