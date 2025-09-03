@@ -39,11 +39,21 @@ in
     firefox-esr
     gnome-tweaks
     gnomeExtensions.appindicator
-    marksman
     neovim
     octaveFull
     rclone
     sioyek
+    #LSPs
+    clang-tools
+    jdt-language-server
+    pyright
+    nodePackages.bash-language-server
+    sqls
+    nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted
+    haskell-language-server
+    lua-language-server
+    marksman
   ];
 
   # Gnome Settings
