@@ -40,7 +40,7 @@ in
     firefox-esr
     gh
     gnome-tweaks
-    gnomeExtensions.appindicator
+    mpv
     neovim
     octaveFull
     rclone
