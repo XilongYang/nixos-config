@@ -102,42 +102,33 @@
   # $ nix search wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    zsh
-    neovim 
-    wget
-    git
-    ntfs3g
-    openssh
-    mandoc
-    cloc
-    gcc
-    gdb
-    cmake
-    gnumake
-    racket
-    qgnomeplatform
     adwaita-qt
     appimage-run
-    python3Full
-    ghc
-    unzip
-    dev86
     bochs
-    findutils
     clang-tools_16
-    xorg.xhost
+    cloc
+    cmake
+    dev86
     docker-compose
-    rclone
-    powertop
-    sioyek
-    wl-clipboard
+    findutils
+    gcc
+    gdb
+    ghc
+    git
+    gnumake
+    mandoc
     nodejs
-    marksman
-    fastfetch
-    firefox-esr
-    gnomeExtensions.appindicator
-    gnome-tweaks
-    octaveFull
+    ntfs3g
+    openssh
+    powertop
+    python3Full
+    qgnomeplatform
+    unzip
+    vim
+    wget
+    wl-clipboard
+    xorg.xhost
+    zsh
   ];
 
   environment.variables.EDITOR = "nvim";
