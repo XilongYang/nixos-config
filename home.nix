@@ -40,10 +40,10 @@ in
     };
     "org/gnome/shell" = {
       favorite-apps = [
-        "firefox.desktop"
-        "org.gnome.Terminal.desktop"
+        "firefox-esr.desktop"
+        "sioyek.desktop"
+        "org.gnome.Console.desktop"
         "org.gnome.Nautilus.desktop"
-        "code.desktop"
       ];
     };
     "org/gnome/desktop/input-sources" = { 
