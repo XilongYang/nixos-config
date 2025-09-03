@@ -33,14 +33,6 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    fastfetch
-    firefox-esr
-    gnomeExtensions.appindicator
-    gnome-tweaks
-    octaveFull
-  ];
-
   # Gnome Settings
   dconf.settings = {
     "org/gnome/desktop/interface" = { 
