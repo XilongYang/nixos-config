@@ -37,6 +37,7 @@ in
     chez
     fastfetch
     firefox-esr
+    gh
     gnome-tweaks
     gnomeExtensions.appindicator
     neovim
