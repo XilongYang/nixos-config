@@ -34,7 +34,7 @@ in
   };
 
   home.packages = with pkgs; [
-    chibi-scheme
+    chez
     fastfetch
     firefox-esr
     gnome-tweaks
