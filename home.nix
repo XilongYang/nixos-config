@@ -36,10 +36,12 @@ in
 
   home.packages = with pkgs; [
     chez
+    eudic
     fastfetch
     firefox-esr
     gh
     gnome-tweaks
+    foliate
     mpv
     neovim
     octaveFull
@@ -67,6 +69,9 @@ in
       favorite-apps = [
         "firefox-esr.desktop"
         "sioyek.desktop"
+        "com.github.johnfactotum.Foliate.desktop"
+        "eusoft-eudic.desktop"
+        "org.octave.Octave.desktop"
         "org.gnome.Console.desktop"
         "org.gnome.Nautilus.desktop"
       ];
@@ -76,7 +81,7 @@ in
       per-window = true;
     };
     "org/gnome/shell" = {
-      enabled-extensions = ["appindicatorsupport@rgcjonas.gmail.com"];
+      enabled-extensions = [];
     };
     "org/gnome/shell/keybindings" = {
       switch-to-application-1 = [];
