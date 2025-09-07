@@ -76,7 +76,7 @@ in
     };
     "org/gnome/desktop/input-sources" = { 
       sources = [ (mkTuple ["xkb" "us"]) (mkTuple ["ibus" "rime"]) ];
-      per-window = true;
+      per-window = false;
     };
     "org/gnome/shell" = {
       enabled-extensions = [];
