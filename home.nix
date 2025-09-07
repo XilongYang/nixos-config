@@ -44,7 +44,6 @@ in
     foliate
     mpv
     neovim
-    octaveFull
     rclone
     sioyek
     #LSPs
@@ -71,7 +70,6 @@ in
         "sioyek.desktop"
         "com.github.johnfactotum.Foliate.desktop"
         "eusoft-eudic.desktop"
-        "org.octave.Octave.desktop"
         "org.gnome.Console.desktop"
         "org.gnome.Nautilus.desktop"
       ];
