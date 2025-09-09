@@ -41,6 +41,7 @@ in
     firefox-esr
     gh
     gnome-tweaks
+    google-chrome
     foliate
     mpv
     neovim
@@ -66,7 +67,7 @@ in
     };
     "org/gnome/shell" = {
       favorite-apps = [
-        "firefox-esr.desktop"
+        "google-chrome.desktop"
         "sioyek.desktop"
         "com.github.johnfactotum.Foliate.desktop"
         "eusoft-eudic.desktop"
