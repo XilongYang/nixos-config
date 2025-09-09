@@ -8,6 +8,9 @@
   # Use the Nix-Flakes and nix-command
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # Enable NetworkManager
+  networking.networkmanager.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.excludePackages = with pkgs; [
@@ -42,30 +45,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    gnome-maps
-    gnome-weather
-    gnome-contacts
-    gnome-music
-    gnome-photos
-    gnome-clocks
-    gnome-connections
-    gnome-software
-    decibels # Audio
-    epiphany # Browser
-    geary # Mail
-    totem # Video
-    evince # PDF
-    simple-scan
-    snapshot
-    yelp
-    seahorse # Password
-  ];
+  # Enable the Hyprland.
+  services.displayManager.sddm.enable = true;
+  programs.hyprland.enable = true;
 
   # Enable the locate & updatedb
   services.locate.enable = true;
@@ -132,7 +114,6 @@
     clang-tools_16
     cloc
     cmake
-    dconf-editor
     dev86
     docker-compose
     findutils
@@ -141,7 +122,6 @@
     ghc
     git
     gnumake
-    letterpress
     mandoc
     nodejs
     ntfs3g
@@ -169,9 +149,12 @@
 
   # Input Method
   i18n.inputMethod = {
-    type = "ibus";
+    type = "fcitx5";
     enable = true;
-    ibus.engines = with pkgs.ibus-engines; [ rime ];
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+      fcitx5-configtool
+    ];
   };
 
   # Fonts
