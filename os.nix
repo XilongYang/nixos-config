@@ -5,8 +5,17 @@
 { config, pkgs, ... }:
 
 {
+  environment.variables.EDITOR = "nvim";
+
   # Use the Nix-Flakes and nix-command
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  # NixOS GC
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
 
   # Enable NetworkManager
   networking.networkmanager.enable = true;
@@ -52,144 +61,23 @@
   # Enable the locate & updatedb
   services.locate.enable = true;
 
-  # PPD
-  services.power-profiles-daemon.enable = false;
-
-  # TLP
-  services.tlp = {
-    enable = true;
-    settings = {
-      TLP_DEFAULT_MODE = "BAT";
-      TLP_PERSISTENT_DEFAULT = 1;
-
-      CPU_SCALING_GOVERNOR_ON_AC  = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      CPU_ENERGY_PERF_POLICY_ON_AC  = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-      CPU_MAX_PERF_ON_BAT = 40;
-      CPU_BOOST_ON_BAT = 0;
-
-      SCHED_POWERSAVE_ON_BAT = 1;
-
-      RUNTIME_PM_ON_AC  = "on";
-      RUNTIME_PM_ON_BAT = "auto";
-      PCI_EXPRESS_ASPM_ON_AC  = "default";
-      PCI_EXPRESS_ASPM_ON_BAT = "powersave";
-
-      DISK_IDLE_SECS_ON_BAT = 2;
-      SATA_LINKPWR_ON_BAT = "med_power_with_dipm";
-      AHCI_RUNTIME_PM_ON_BAT = "auto";
-      NVME_APST_ON_BAT = 1;
-      NVME_APST_MAX_LATENCY_ON_BAT = 30000;
-
-      USB_AUTOSUSPEND = 1;
-
-      WIFI_PWR_ON_BAT = "on";
-      WOL_DISABLE = "Y";
-
-      SOUND_POWER_SAVE_ON_BAT = 1;
-      SOUND_POWER_SAVE_CONTROLLER = "Y";
-    };
-  };
-  
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  programs.zsh.enable = true;
-  users = {
-    users.xilong = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "docker"]; 
-      shell = pkgs.zsh;
-    };
-  };
-
-  nix.settings.trusted-users = [ "xilong" ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    adwaita-qt
-    appimage-run
-    bochs
-    clang-tools_16
-    cloc
-    cmake
-    dev86
-    docker-compose
-    findutils
-    gcc
-    gdb
-    ghc
-    git
-    gnumake
-    mandoc
-    nodejs
-    ntfs3g
-    openssh
-    powertop
-    python3Full
-    qgnomeplatform
-    unzip
-    vim
-    wget
-    wl-clipboard
-    xorg.xhost
-    zsh
-  ];
-
-  environment.variables.EDITOR = "nvim";
-
-  # Locales
-  i18n.supportedLocales = [
-  "en_US.UTF-8/UTF-8"
-  "zh_CN.UTF-8/UTF-8"
-  "ja_JP.UTF-8/UTF-8"
-  ];
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  # Input Method
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
-      fcitx5-configtool
-    ];
-  };
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    source-han-sans
-    source-han-serif
-    wqy_zenhei
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-  ];
-
   # HIP
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.hipcc}"
   ];
-
-  # NixOS GC
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 1w";
-  };
-
-  # QT
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
 
   # Docker
   virtualisation.docker = {
     enable = true;
     storageDriver = "btrfs";
   };
+
+  imports = [
+    ./os.d/i18n.nix
+    ./os.d/packages.nix
+    ./os.d/tlp.nix
+    ./os.d/user.nix
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
