@@ -1,8 +1,8 @@
 { config, ... }:
 {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload   = /home/xilong/.config/nixos/res/wallpaper/railway.jpg
-    wallpaper = ,/home/xilong/.config/nixos/res/wallpaper/railway.jpg
+    preload   = /home/xilong/.config/nixos/res/wallpaper/totoro.png
+    wallpaper = ,/home/xilong/.config/nixos/res/wallpaper/totoro.png
   '';
 
   xdg.configFile."hypr/hyprlock.conf".text = ''
@@ -40,6 +40,7 @@
     $mod = "SUPER"
     exec-once = hyprpaper
     exec-once = waybar
+    exec-once = mako
     exec-once = hyprctl setcursor Adwaita 24
     exec-once = fcitx5 -d -r
     exec-once = fcitx5-remote -d -r
@@ -47,6 +48,7 @@
     bind = $mod, RETURN, exec, kitty
     bind = $mod, R, exec, fuzzel
     bind = $mod, E, exec, thunar
+    bind = $mod SHIFT, S, exec, hyprshot -m region
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
 

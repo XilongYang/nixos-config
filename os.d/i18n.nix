@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  environment.variables.GTK_IM_MODULE = "fcitx";
+  environment.variables.WAYLAND_IM_MODULE = "fcitx";
   environment.variables.QT_IM_MODULE = "fcitx";
   environment.variables.XMODIFIERS = "@im=fcitx";
   environment.variables.SDL_IM_MODULE = "fcitx";
