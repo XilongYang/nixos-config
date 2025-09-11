@@ -5,6 +5,7 @@
   home.sessionVariables = {
       XCURSOR_THEME = "Adwaita";
       XCURSOR_SIZE  = "24";
+      GTK_IM_MODULE = "";
     };
   
   gtk = {

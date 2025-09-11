@@ -21,13 +21,19 @@
     gnumake
     hyprlock
     hyprpaper
+    hyprshot
+    kdePackages.qtwayland
+    libsForQt5.qt5.qtwayland
+    mako
     mandoc
     nodejs
     ntfs3g
     openssh
+    p7zip
     powertop
-    python3Full
+    python3
     where-is-my-sddm-theme
+    unrar
     unzip
     vim
     wget
@@ -53,8 +59,12 @@
     qt6ct
     rclone
     sioyek
-    xfce.thunar
     waybar
+    overskride
+    xarchiver
+    xfce.ristretto
+    xfce.thunar
+    xfce.tumbler
 
     #LSPs
     clang-tools
