@@ -6,11 +6,7 @@
 
 {
   environment.variables.EDITOR = "nvim";
-  environment.variables.GTK_IM_MODULE = "fcitx";
-  environment.variables.QT_IM_MODULE = "fcitx";
-  environment.variables.XMODIFIERS = "@im=fcitx";
-  environment.variables.SDL_IM_MODULE = "fcitx";
-  environment.variables.GLFW_IM_MODULE = "fcitx";
+  environment.variables.QT_QPA_PLATFORMTHEME = "qt6ct";
 
   # Use the Nix-Flakes and nix-command
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -60,7 +56,19 @@
   services.libinput.enable = true;
 
   # Enable the Hyprland.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    package = pkgs.kdePackages.sddm;
+    wayland.enable = true;
+    theme = "where_is_my_sddm_theme";
+    extraPackages = with pkgs.kdePackages; [
+      qt5compat
+      qtdeclarative
+      qtwayland
+      qtsvg
+      qtmultimedia
+    ];
+  };
   programs.hyprland.enable = true;
 
   # Enable the locate & updatedb

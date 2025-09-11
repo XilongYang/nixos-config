@@ -5,7 +5,6 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Base
-    adwaita-qt
     appimage-run
     bochs
     brightnessctl
@@ -26,7 +25,7 @@
     openssh
     powertop
     python3Full
-    qgnomeplatform
+    where-is-my-sddm-theme
     unzip
     vim
     wget
@@ -37,20 +36,18 @@
     # User
     adwaita-icon-theme
     chez
+    eudic
     fastfetch
     fuzzel
     gh
-    goldendict-ng
     google-chrome
     hyprpaper
     foliate
     kitty
-    libsForQt5.qtstyleplugin-kvantum
     mpv
     neovim
     qogir-theme
     qogir-icon-theme
-    qogir-kde
     libsForQt5.qt5ct
     qt6ct
     rclone
