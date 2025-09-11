@@ -5,6 +5,31 @@
     wallpaper = ,/home/xilong/Pictures/Wallpaper/railway.jpg
   '';
 
+  xdg.configFile."hypr/hyprlock.conf".text = ''
+    background {
+        monitor =
+        path = screenshot
+        color = rgba(25, 20, 20, 1.0)
+        blur_passes = 2
+    }
+    
+    input-field {
+        monitor = eDP-1
+        size = 1500, 300
+        outline_thickness = 0
+        dots_size = 0.8
+        dots_spacing = 0.2
+        dots_text_format = *
+        outer_color = rgba(0,0,0,0)
+        inner_color = rgba(0,0,0,0)
+        font_color = rgba(255,255,255,1.0)
+        halign = center
+        valign = center
+        placeholder_text = <Password>
+        placeholder_static = true
+    }
+  '';
+
   xdg.configFile."hypr/hyprland.conf".text = ''
     $mod = "SUPER"
     exec-once = hyprpaper
@@ -18,6 +43,10 @@
     bind = $mod, E, exec, thunar
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
+
+    # Lockscreen
+    bind = $mod SHIFT, L, exec, hyprlock 
+    bind = ALT CTRL, L, exec, hyprlock & sleep 1 && systemctl suspend
 
     # Move focus with mod + hjkl
     bind = $mod, H, movefocus, l

@@ -74,6 +74,15 @@
   # Enable the locate & updatedb
   services.locate.enable = true;
 
+  # Suspend Configure
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitchExternalPower = "suspend-then-hibernate";
+    IdleAction = "suspend-then-hibernate";
+    IdleActionSec = "1h";
+    HibernateDelaySec = "1h";
+  };
+
   # HIP
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.hipcc}"
