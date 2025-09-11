@@ -19,6 +19,8 @@
     ghc
     git
     gnumake
+    hyprlock
+    hyprpaper
     mandoc
     nodejs
     ntfs3g
@@ -41,7 +43,6 @@
     fuzzel
     gh
     google-chrome
-    hyprpaper
     foliate
     kitty
     mpv
