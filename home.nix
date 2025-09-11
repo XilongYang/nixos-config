@@ -19,12 +19,6 @@
     };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";   # use qt5ct/qt6ct control panels
-    style.name    = "kvantum";# tell Qt to use Kvantum
-  };
-
   programs.kitty = {
     enable = true;
     font = {

@@ -1,5 +1,11 @@
 { config, pkgs, ... }:
 {
+  environment.variables.GTK_IM_MODULE = "fcitx";
+  environment.variables.QT_IM_MODULE = "fcitx";
+  environment.variables.XMODIFIERS = "@im=fcitx";
+  environment.variables.SDL_IM_MODULE = "fcitx";
+  environment.variables.GLFW_IM_MODULE = "fcitx";
+
   # Locales
   i18n.supportedLocales = [
   "en_US.UTF-8/UTF-8"
