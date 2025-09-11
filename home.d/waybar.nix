@@ -9,7 +9,7 @@
     
         "modules-left": ["hyprland/workspaces"],
         "modules-center": ["hyprland/window"],
-        "modules-right": ["backlight", "wireplumber", "battery", "hyprland/language", "idle_inhibitor", "network", "bluetooth", "tray", "clock"],
+        "modules-right": ["backlight", "wireplumber", "idle_inhibitor", "network", "bluetooth", "tray", "battery", "clock"],
     
         "hyprland/workspaces": {
             "format": "<span size='larger'>{icon}</span>",
@@ -32,23 +32,24 @@
           "format": "{}"
         },
         "clock": {
-            "format": " {:%H:%M} "
+            "format": "{:%H:%M} "
         },
     
         "backlight": {
             "format": " {icon}  {percent}% ",
-            "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
+            "format-icons": ["󰃠"],
             "tooltip": false
         },
     
         "wireplumber": {
             "format": " \udb81\udd7e  {volume}% ",
+            "format-muted": "\udb81\udf5f",
             "max-volume": 100,
             "scroll-step": 5
         },
     
         "battery": {
-            "bat": "BAT1",
+            "bat": "BAT0",
             "interval": 60,
             "format": "{icon}  {capacity}%",
             "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
@@ -81,10 +82,6 @@
             "tooltip-format": "{controller_alias}\t{controller_address}",
             "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
             "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-        },
-    
-        "hyprland/language": {
-            "format": "{short}"
         },
     
         "tray": {

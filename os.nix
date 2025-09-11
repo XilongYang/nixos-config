@@ -6,6 +6,11 @@
 
 {
   environment.variables.EDITOR = "nvim";
+  environment.variables.GTK_IM_MODULE = "fcitx";
+  environment.variables.QT_IM_MODULE = "fcitx";
+  environment.variables.XMODIFIERS = "@im=fcitx";
+  environment.variables.SDL_IM_MODULE = "fcitx";
+  environment.variables.GLFW_IM_MODULE = "fcitx";
 
   # Use the Nix-Flakes and nix-command
   nix.settings.experimental-features = ["nix-command" "flakes"];

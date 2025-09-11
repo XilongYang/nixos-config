@@ -10,7 +10,8 @@
     exec-once = hyprpaper
     exec-once = waybar
     exec-once = hyprctl setcursor Adwaita 24
-    exec-once = fcitx5 -d
+    exec-once = fcitx5 -d -r
+    exec-once = fcitx5-remote -d -r
 
     bind = $mod, RETURN, exec, kitty
     bind = $mod, R, exec, fuzzel

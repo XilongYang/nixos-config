@@ -8,6 +8,7 @@
     adwaita-qt
     appimage-run
     bochs
+    brightnessctl
     clang-tools_16
     cloc
     cmake
@@ -36,10 +37,10 @@
     # User
     adwaita-icon-theme
     chez
-    eudic
     fastfetch
     fuzzel
     gh
+    goldendict-ng
     google-chrome
     hyprpaper
     foliate
