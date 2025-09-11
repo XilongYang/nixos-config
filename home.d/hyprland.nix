@@ -1,8 +1,8 @@
 { config, ... }:
 {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload   = /home/xilong/Pictures/Wallpaper/railway.jpg
-    wallpaper = ,/home/xilong/Pictures/Wallpaper/railway.jpg
+    preload   = /home/xilong/.config/nixos/res/wallpaper/railway.jpg
+    wallpaper = ,/home/xilong/.config/nixos/res/wallpaper/railway.jpg
   '';
 
   xdg.configFile."hypr/hyprlock.conf".text = ''
@@ -31,6 +31,12 @@
   '';
 
   xdg.configFile."hypr/hyprland.conf".text = ''
+    general {
+        gaps_in = 2
+        gaps_out = 2
+        resize_on_border = true
+    }
+
     $mod = "SUPER"
     exec-once = hyprpaper
     exec-once = waybar
@@ -45,8 +51,14 @@
     bind = ALT, F4, killactive,
 
     # Lockscreen
-    bind = $mod SHIFT, L, exec, hyprlock 
-    bind = ALT CTRL, L, exec, hyprlock & sleep 1 && systemctl suspend
+    bind = $mod ALT, L, exec, hyprlock 
+    bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend
+
+    # Resize with mod + SHIFT + hjkl
+    bind = $mod SHIFT, H, resizeactive, -20 0
+    bind = $mod SHIFT, L, resizeactive, 20 0
+    bind = $mod SHIFT, J, resizeactive, 0 20
+    bind = $mod SHIFT, K, resizeactive, 0 -20
 
     # Move focus with mod + hjkl
     bind = $mod, H, movefocus, l
