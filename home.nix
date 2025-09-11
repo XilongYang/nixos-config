@@ -32,6 +32,7 @@
   };
 
   imports = [
+    ./home.d/fuzzel.nix
     ./home.d/git.nix
     ./home.d/zsh.nix    
     ./home.d/waybar.nix
