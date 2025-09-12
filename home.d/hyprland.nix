@@ -75,6 +75,12 @@
     bind = $mod SHIFT, J, resizeactive, 0 20
     bind = $mod SHIFT, K, resizeactive, 0 -20
 
+    # Resize with mod + CTRL + SHIFT + hjkl
+    bind = $mod CTRL SHIFT, H, resizeactive, -60 0
+    bind = $mod CTRL SHIFT, L, resizeactive, 60 0
+    bind = $mod CTRL SHIFT, J, resizeactive, 0 60
+    bind = $mod CTRL SHIFT, K, resizeactive, 0 -60
+
     # Move focus with mod + hjkl
     bind = $mod, H, movefocus, l
     bind = $mod, L, movefocus, r
