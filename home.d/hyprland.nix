@@ -52,6 +52,19 @@
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
 
+    # Toggle floating
+    bind = $mod, F, togglefloating
+
+    bindm = $mod, mouse:272, movewindow
+    bindm = $mod, mouse:273, resizewindow
+
+    windowrule = float,  class:^(xdg-desktop-portal-gtk)$
+    windowrule = center, class:^(xdg-desktop-portal-gtk)$
+    windowrule = size 1200 800, class:^(xdg-desktop-portal-gtk)$
+
+    windowrule = float,  class:^(google-chrome|chromium|brave-browser)$, initialTitle:^(.*)(Picture-in-Picture)(.*)$
+    windowrule = center, class:^(google-chrome|chromium|brave-browser)$, initialTitle:^(.*)(Picture-in-Picture)(.*)$
+    
     # Lockscreen
     bind = $mod ALT, L, exec, hyprlock 
     bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend
