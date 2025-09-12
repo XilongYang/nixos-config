@@ -46,7 +46,6 @@
     chez
     eudic
     fastfetch
-    fuzzel
     gh
     gimp
     google-chrome
@@ -63,6 +62,7 @@
     waybar
     overskride
     xarchiver
+    xfce.xfce4-appfinder
     xfce.ristretto
     xfce.thunar
     xfce.tumbler
