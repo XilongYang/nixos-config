@@ -20,24 +20,13 @@
     };
   };
 
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "JetBrains Mono";
-      size = 12;
-    };
-    settings = {
-      cursor_blink_interval = 0;
-      enable_audio_bell = "no";
-    };
-  };
-
   imports = [
     ./home.d/fuzzel.nix
     ./home.d/git.nix
-    ./home.d/zsh.nix    
-    ./home.d/waybar.nix
     ./home.d/hyprland.nix
+    ./home.d/kitty.nix
+    ./home.d/waybar.nix
+    ./home.d/zsh.nix    
   ];
 
   # This value determines the Home Manager release that your

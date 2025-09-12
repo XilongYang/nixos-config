@@ -102,7 +102,7 @@
   xdg.configFile."waybar/style.css".text = ''
     @define-color foreground #eeeeee;
     @define-color foreground-inactive #aaaaaa;
-    @define-color background #000000;
+    @define-color background #292e39;
     
     * {
         font-family: JetBrainsMono Nerd Font;
