@@ -21,7 +21,6 @@
   };
 
   imports = [
-    ./home.d/fuzzel.nix
     ./home.d/git.nix
     ./home.d/hyprland.nix
     ./home.d/kitty.nix
