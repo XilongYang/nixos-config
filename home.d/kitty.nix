@@ -4,7 +4,7 @@
     enable = true;
     font = {
       name = "JetBrains Mono";
-      size = 12;
+      size = 14;
     };
     settings = {
       cursor_blink_interval = 0;
