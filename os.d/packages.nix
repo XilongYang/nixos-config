@@ -48,6 +48,7 @@
     fastfetch
     fuzzel
     gh
+    gimp
     google-chrome
     foliate
     kitty
