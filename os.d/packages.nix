@@ -60,7 +60,6 @@
     sioyek
     waybar
     overskride
-    xarchiver
     yazi
 
     #LSPs
