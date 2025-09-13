@@ -22,8 +22,6 @@
     hyprlock
     hyprpaper
     hyprshot
-    kdePackages.qtwayland
-    libsForQt5.qt5.qtwayland
     mako
     mandoc
     nodejs
@@ -48,6 +46,7 @@
     fastfetch
     gh
     gimp
+    goldendict-ng
     google-chrome
     foliate
     kitty
@@ -55,8 +54,6 @@
     neovim
     qogir-theme
     qogir-icon-theme
-    libsForQt5.qt5ct
-    qt6ct
     rclone
     sioyek
     waybar
@@ -79,14 +76,4 @@
     lua-language-server
     marksman
   ];
-
-  # Fonts
-  fonts.packages = with pkgs; [
-    source-han-sans
-    source-han-serif
-    wqy_zenhei
-    jetbrains-mono
-    nerd-fonts.jetbrains-mono
-  ];
-
 }

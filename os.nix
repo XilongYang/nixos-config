@@ -6,7 +6,6 @@
 
 {
   environment.variables.EDITOR = "nvim";
-  environment.variables.QT_QPA_PLATFORMTHEME = "qt6ct";
 
   # Use the Nix-Flakes and nix-command
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -61,13 +60,6 @@
     package = pkgs.kdePackages.sddm;
     wayland.enable = true;
     theme = "where_is_my_sddm_theme";
-    extraPackages = with pkgs.kdePackages; [
-      qt5compat
-      qtdeclarative
-      qtwayland
-      qtsvg
-      qtmultimedia
-    ];
   };
   programs.hyprland.enable = true;
 
@@ -94,12 +86,8 @@
     storageDriver = "btrfs";
   };
 
-  imports = [
-    ./os.d/i18n.nix
-    ./os.d/packages.nix
-    ./os.d/tlp.nix
-    ./os.d/user.nix
-  ];
+  imports = let dir = ./os.d;
+    in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
