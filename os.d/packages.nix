@@ -42,7 +42,6 @@
     # User
     adwaita-icon-theme
     chez
-    eudic
     fastfetch
     gh
     gimp3
