@@ -60,6 +60,13 @@
     package = pkgs.kdePackages.sddm;
     wayland.enable = true;
     theme = "where_is_my_sddm_theme";
+    extraPackages = with pkgs.kdePackages; [
+      qt5compat
+      qtdeclarative
+      qtwayland
+      qtsvg
+      qtmultimedia
+    ];
   };
   programs.hyprland.enable = true;
 
