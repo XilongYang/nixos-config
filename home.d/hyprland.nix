@@ -32,8 +32,8 @@
 
   xdg.configFile."hypr/hyprland.conf".text = ''
     general {
-        gaps_in = 2
-        gaps_out = 2
+        gaps_in = 4
+        gaps_out = 10
         resize_on_border = true
     }
 
@@ -74,16 +74,16 @@
     bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend
 
     # Resize with mod + SHIFT + hjkl
-    bind = $mod SHIFT, H, resizeactive, -20 0
-    bind = $mod SHIFT, L, resizeactive, 20 0
-    bind = $mod SHIFT, J, resizeactive, 0 20
-    bind = $mod SHIFT, K, resizeactive, 0 -20
+    bind = $mod SHIFT, H, resizeactive, -100 0
+    bind = $mod SHIFT, L, resizeactive, 100 0
+    bind = $mod SHIFT, J, resizeactive, 0 100
+    bind = $mod SHIFT, K, resizeactive, 0 -100
 
     # Resize with mod + CTRL + SHIFT + hjkl
-    bind = $mod CTRL SHIFT, H, resizeactive, -60 0
-    bind = $mod CTRL SHIFT, L, resizeactive, 60 0
-    bind = $mod CTRL SHIFT, J, resizeactive, 0 60
-    bind = $mod CTRL SHIFT, K, resizeactive, 0 -60
+    bind = $mod CTRL SHIFT, H, resizeactive, -20 0
+    bind = $mod CTRL SHIFT, L, resizeactive, 20 0
+    bind = $mod CTRL SHIFT, J, resizeactive, 0 20
+    bind = $mod CTRL SHIFT, K, resizeactive, 0 -20
 
     # Move focus with mod + hjkl
     bind = $mod, H, movefocus, l
