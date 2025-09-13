@@ -52,17 +52,16 @@
     kitty
     mpv
     neovim
+    nsxiv
     qogir-theme
     qogir-icon-theme
     rclone
+    rofi
     sioyek
     waybar
     overskride
     xarchiver
-    xfce.xfce4-appfinder
-    xfce.ristretto
-    xfce.thunar
-    xfce.tumbler
+    yazi
 
     #LSPs
     clang-tools

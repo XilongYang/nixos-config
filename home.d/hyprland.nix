@@ -50,9 +50,9 @@
     exec-once = fcitx5-remote -d -r
 
     bind = $mod, RETURN, exec, kitty
-    bind = $mod, R, exec, xfce4-appfinder
-    bind = $mod, E, exec, thunar
-    bind = $mod SHIFT, S, exec, hyprshot -m region
+    bind = $mod, E, exec, kitty yazi
+    bind = $mod, R, exec, rofi -show drun
+    bind = $mod SHIFT, S, exec, hyprshot -m region -o /home/xilong/Pictures/Screenshots/
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
 
@@ -69,10 +69,6 @@
     windowrule = float,  class:^(google-chrome|chromium|brave-browser)$, initialTitle:^(.*)(Picture-in-Picture)(.*)$
     windowrule = center, class:^(google-chrome|chromium|brave-browser)$, initialTitle:^(.*)(Picture-in-Picture)(.*)$
     
-    windowrule = float,  class:^(xfce4\-appfinder)$
-    windowrule = center, class:^(xfce4\-appfinder)$
-    windowrule = size 600 400, class:^(xfce4\-appfinder)$
-
     # Lockscreen
     bind = $mod ALT, L, exec, hyprlock 
     bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend
