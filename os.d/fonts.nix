@@ -23,7 +23,7 @@
       defaultFonts = {
         serif     = [ "Source Han Serif" "Noto Serif" ];
         sansSerif = [ "Source Han Sans" "Noto Sans" ];
-        monospace = [ "JetBrainsMono Nerd Font" "Noto Sans Mono CJK SC" ];
+        monospace = [ "Noto Sans Mono" "JetBrainsMono Nerd Font" ];
         emoji     = [ "Noto Color Emoji" ];
       };
     };
