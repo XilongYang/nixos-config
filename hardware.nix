@@ -19,6 +19,12 @@
       options = [ "subvol=@,compress=zstd" ];
     };
 
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/555335b4-d101-4818-a883-87982802278e";
+      fsType = "btrfs";
+      options = [ "subvol=@home,compress=zstd" ];
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/0902-E82B";
       fsType = "vfat";
