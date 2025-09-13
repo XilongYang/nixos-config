@@ -6,7 +6,7 @@
      */
     
     * {
-        font: "JetBrainsMono Nerd Font 22";
+        font: "JetBrainsMono Nerd Font 14";
     
         foreground:                  #a9b1d6;
         background:                  #1a1b26;
