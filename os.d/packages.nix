@@ -45,7 +45,7 @@
     eudic
     fastfetch
     gh
-    gimp
+    gimp3
     goldendict-ng
     google-chrome
     foliate
