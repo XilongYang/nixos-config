@@ -37,6 +37,10 @@
         resize_on_border = true
     }
 
+    xwayland {
+        force_zero_scaling = true
+    }
+
     $mod = "SUPER"
     exec-once = hyprpaper
     exec-once = waybar

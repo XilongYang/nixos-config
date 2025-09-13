@@ -20,6 +20,11 @@
     };
   };
 
+  xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
+    [General]
+    theme=Qogir-dark
+  '';
+
   imports = [
     ./home.d/git.nix
     ./home.d/hyprland.nix
