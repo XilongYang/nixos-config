@@ -11,7 +11,7 @@
         foreground:                  #a9b1d6;
         background:                  #1a1b26;
     
-        separatorcolor:              #bb9af7;
+        separatorcolor:              #7aa2f7;
     
         selected-foreground:         @background;
         selected-background:         #f7768e;
