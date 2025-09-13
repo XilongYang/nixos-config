@@ -16,13 +16,25 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/555335b4-d101-4818-a883-87982802278e";
       fsType = "btrfs";
-      options = [ "subvol=@,compress=zstd" ];
+      options = [ "subvol=@,compress=zstd,ssd,space_cache=v2,discard=async,noatime" ];
     };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/555335b4-d101-4818-a883-87982802278e";
       fsType = "btrfs";
-      options = [ "subvol=@home,compress=zstd" ];
+      options = [ "subvol=@home,compress=zstd,ssd,space_cache=v2,discard=async,noatime" ];
+    };
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/555335b4-d101-4818-a883-87982802278e";
+      fsType = "btrfs";
+      options = [ "subvol=@var_log,compress=zstd,ssd,space_cache=v2,discard=async,noatime" ];
+    };
+
+  fileSystems."/var/cache" =
+    { device = "/dev/disk/by-uuid/555335b4-d101-4818-a883-87982802278e";
+      fsType = "btrfs";
+      options = [ "subvol=@var_cache,compress=zstd,ssd,space_cache=v2,discard=async,noatime" ];
     };
 
   fileSystems."/boot" =
