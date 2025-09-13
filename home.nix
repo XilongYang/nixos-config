@@ -25,13 +25,8 @@
     theme=Qogir-dark
   '';
 
-  imports = [
-    ./home.d/git.nix
-    ./home.d/hyprland.nix
-    ./home.d/kitty.nix
-    ./home.d/waybar.nix
-    ./home.d/zsh.nix    
-  ];
+  imports = let dir = ./home.d;
+    in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
