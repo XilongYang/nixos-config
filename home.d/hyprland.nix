@@ -1,36 +1,8 @@
 { config, ... }:
 {
-  xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload   = /home/xilong/.config/nixos/res/wallpaper/totoro.png
-    wallpaper = ,/home/xilong/.config/nixos/res/wallpaper/totoro.png
-  '';
-
-  xdg.configFile."hypr/hyprlock.conf".text = ''
-    background {
-        monitor =
-        path = screenshot
-        color = rgba(25, 20, 20, 1.0)
-        blur_passes = 2
-    }
-    
-    input-field {
-        monitor = eDP-1
-        size = 1500, 300
-        outline_thickness = 0
-        dots_size = 0.8
-        dots_spacing = 0.2
-        dots_text_format = *
-        outer_color = rgba(0,0,0,0)
-        inner_color = rgba(0,0,0,0)
-        font_color = rgba(255,255,255,1.0)
-        halign = center
-        valign = center
-        placeholder_text = <Password>
-        placeholder_static = true
-    }
-  '';
-
   xdg.configFile."hypr/hyprland.conf".text = ''
+    monitor = , highres, auto, 2
+
     general {
         gaps_in = 4
         gaps_out = 10
@@ -48,6 +20,7 @@
     exec-once = hyprctl setcursor Adwaita 24
     exec-once = fcitx5 -d -r
     exec-once = fcitx5-remote -d -r
+    exec-once = xrdb ~/.Xresources
 
     bind = $mod, RETURN, exec, kitty
     bind = $mod, E, exec, kitty yazi
@@ -130,4 +103,35 @@
         disable_splash_rendering = true
     }
   '';
+
+  xdg.configFile."hypr/hyprpaper.conf".text = ''
+    preload   = /home/xilong/.config/nixos/res/wallpaper/totoro.png
+    wallpaper = ,/home/xilong/.config/nixos/res/wallpaper/totoro.png
+  '';
+
+  xdg.configFile."hypr/hyprlock.conf".text = ''
+    background {
+        monitor =
+        path = screenshot
+        color = rgba(25, 20, 20, 1.0)
+        blur_passes = 2
+    }
+    
+    input-field {
+        monitor = eDP-1
+        size = 1500, 300
+        outline_thickness = 0
+        dots_size = 0.8
+        dots_spacing = 0.2
+        dots_text_format = *
+        outer_color = rgba(0,0,0,0)
+        inner_color = rgba(0,0,0,0)
+        font_color = rgba(255,255,255,1.0)
+        halign = center
+        valign = center
+        placeholder_text = <Password>
+        placeholder_static = true
+    }
+  '';
+
 }

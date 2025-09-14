@@ -6,6 +6,7 @@
       XCURSOR_THEME = "Adwaita";
       XCURSOR_SIZE  = "24";
       GTK_IM_MODULE = "";
+      GTK_SCALE = "2";
     };
   
   gtk = {
