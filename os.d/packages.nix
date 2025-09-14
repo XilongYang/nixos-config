@@ -52,6 +52,7 @@
     mpv
     neovim
     nsxiv
+    obs-studio
     qogir-theme
     qogir-icon-theme
     rclone

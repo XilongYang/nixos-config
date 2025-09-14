@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 {
   environment.variables = {
-    QT_AUTO_SCREEN_SCALE_FACTOR = "0";
-    QT_ENABLE_HIGHDPI_SCALING   = "0";
-    QT_SCALE_FACTOR = "2";
-
     QT_STYLE_OVERRIDE    = "kvantum";
     KVANTUM_THEME = "QogirDark";
     QT_QUICK_CONTROLS_STYLE = "Fusion";
