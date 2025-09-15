@@ -26,7 +26,7 @@
     theme=Qogir-dark
   '';
 
-  imports = let dir = ./home.d;
+  imports = let dir = ./modules;
     in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
   # This value determines the Home Manager release that your

@@ -19,16 +19,13 @@
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hardware.nix
-          ./network.nix
-          ./os.nix
-          ./boot.nix
+          ./os.d/os.nix
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
-            home-manager.users.xilong = import ./home.nix;
+            home-manager.users.xilong = import ./home.d/home.nix;
           }
         ]; 
       };
