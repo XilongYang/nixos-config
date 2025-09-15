@@ -32,6 +32,9 @@
 
     bind = $mod, TAB, cyclenext, tiled
 
+    # Toggle Fullscreen
+    bind = $mod SHIFT, F, fullscreen
+
     # Toggle floating
     bind = $mod, F, togglefloating
     bind = ALT, TAB, cyclenext, floating
