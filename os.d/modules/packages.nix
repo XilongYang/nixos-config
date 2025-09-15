@@ -18,6 +18,7 @@
     gdb
     ghc
     git
+    git-filter-repo
     gnumake
     hypridle
     hyprlock
