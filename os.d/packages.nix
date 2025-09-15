@@ -59,6 +59,7 @@
     rclone
     rofi
     sioyek
+    typora
     waybar
     overskride
     yazi
