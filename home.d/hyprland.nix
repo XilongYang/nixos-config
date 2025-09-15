@@ -142,27 +142,30 @@
         after_sleep_cmd = hyprctl dispatch dpms on  # to avoid having to press a key twice to turn on the display.
     }
     
-    # turn off keyboard backlight, comment out this section if you dont have a keyboard backlight.
+    # Turn off keyboard backlight
     listener { 
-        timeout = 20                                        # 20sec
-        on-timeout = brightnessctl -sd asus::kbd_backlight set 0 # turn off keyboard backlight.
-        on-resume = brightnessctl -rd asus::kbd_backlight        # turn on keyboard backlight.
+        timeout = 20
+        on-timeout = brightnessctl -sd asus::kbd_backlight set 0
+        on-resume = brightnessctl -rd asus::kbd_backlight
     }
     
+    # Set monitor backlight to minimum
     listener {
-        timeout = 300                                # 5min.
-        on-timeout = brightnessctl -s set 10         # set monitor backlight to minimum, avoid 0 on OLED monitor.
-        on-resume = brightnessctl -r                 # monitor backlight restore.
+        timeout = 300
+        on-timeout = brightnessctl -s set 10
+        on-resume = brightnessctl -r
     }
     
+    # Lock screen
     listener {
-        timeout = 900                               # 15min
-        on-timeout = loginctl lock-session            # lock screen when timeout has passed
+        timeout = 900
+        on-timeout = loginctl lock-session
     }
     
+    # Suspend
     listener {
-        timeout = 920                                # 15min 20sec
-        on-timeout = systemctl suspend                # suspend pc
+        timeout = 920
+        on-timeout = systemctl suspend-then-hibrnate
     }
   '';
 }
