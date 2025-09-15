@@ -1,5 +1,10 @@
 { config, ... }:
 {
+  xdg.configFile."hypr/hyprpaper.conf".text = ''
+    preload   = /home/xilong/Pictures/Wallpaper/totoro.png
+    wallpaper = ,/home/xilong/Pictures/Wallpaper/totoro.png
+  '';
+
   xdg.configFile."hypr/hyprland.conf".text = ''
     monitor = , highres, auto, 2
 
@@ -117,11 +122,6 @@
         disable_hyprland_logo = true
         disable_splash_rendering = true
     }
-  '';
-
-  xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload   = /home/xilong/.config/nixos/res/wallpaper/totoro.png
-    wallpaper = ,/home/xilong/.config/nixos/res/wallpaper/totoro.png
   '';
 
   xdg.configFile."hypr/hyprlock.conf".text = ''
