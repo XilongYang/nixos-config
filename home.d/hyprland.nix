@@ -30,8 +30,11 @@
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
 
+    bind = $mod, TAB, cyclenext, tiled
+
     # Toggle floating
     bind = $mod, F, togglefloating
+    bind = ALT, TAB, cyclenext, floating
 
     bindm = $mod, mouse:272, movewindow
     bindm = $mod, mouse:273, resizewindow
@@ -64,6 +67,12 @@
     bind = $mod, L, movefocus, r
     bind = $mod, J, movefocus, d
     bind = $mod, K, movefocus, u
+
+    # Swap focus with mod + CTRL + hjkl
+    bind = $mod CTRL, H, swapwindow, l
+    bind = $mod CTRL, L, swapwindow, r
+    bind = $mod CTRL, K, swapwindow, u
+    bind = $mod CTRL, J, swapwindow, d
 
     # Switch workspaces with mod + [0-9]
     bind = $mod, 1, workspace, 1
@@ -98,6 +107,8 @@
     bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
 
     input:touchpad:natural_scroll = true
+
+    gesture = 3, horizontal, workspace
 
     misc {
         disable_hyprland_logo = true
