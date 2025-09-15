@@ -19,6 +19,7 @@
     ghc
     git
     gnumake
+    hypridle
     hyprlock
     hyprpaper
     hyprshot
