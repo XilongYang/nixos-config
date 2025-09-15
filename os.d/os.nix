@@ -91,7 +91,7 @@
     storageDriver = "btrfs";
   };
 
-  imports = let dir = ./os.d;
+  imports = let dir = ./modules;
     in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
   # This value determines the NixOS release from which the default
