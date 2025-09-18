@@ -42,6 +42,7 @@
     zsh
 
     # User
+    aria2
     adwaita-icon-theme
     chez
     fastfetch
@@ -63,6 +64,7 @@
     typora
     waybar
     overskride
+    qbittorrent
     yazi
 
     #LSPs
