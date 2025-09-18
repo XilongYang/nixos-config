@@ -8,7 +8,7 @@
     appimage-run
     bochs
     brightnessctl
-    clang-tools_16
+    clang-tools
     cloc
     cmake
     dev86
