@@ -77,7 +77,7 @@
                "critical": 5
             },
             "format": "{icon}  {capacity}%",
-            "format-alt": "{icon}  {time}",
+            "format-charging":"{icon}  {capacity}\udb85\udc0c",
             "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
         },
         "network": {
