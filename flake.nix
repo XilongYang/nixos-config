@@ -13,7 +13,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
   
-  
   outputs = inputs@{nixpkgs, home-manager, ...} : {
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
