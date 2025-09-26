@@ -12,7 +12,7 @@
       ExecStart = pkgs.writeShellScript "btrfs-auto-snapshot" ''
         set -euo pipefail
 
-        DEVICE="/dev/disk/by-uuid/555335b4-d101-4818-a883-87982802278e"
+        DEVICE="/dev/disk/by-uuid/5b68ea29-4079-4d6c-a3f0-d95c67bae2bc";
         TOP="/mnt/btrfs-root"
         SNAP_DIR=".snapshots"
         SNAP_KEEP=7
