@@ -32,6 +32,7 @@
     p7zip
     powertop
     python3
+    rclone
     where-is-my-sddm-theme
     unrar
     unzip
