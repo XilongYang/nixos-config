@@ -65,6 +65,7 @@
     typora
     waybar
     overskride
+    protonvpn-gui
     qbittorrent
     yazi
 
