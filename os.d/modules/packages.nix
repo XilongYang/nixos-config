@@ -33,6 +33,7 @@
     powertop
     python3
     rclone
+    tree
     where-is-my-sddm-theme
     unrar
     unzip
