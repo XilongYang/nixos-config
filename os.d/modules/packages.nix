@@ -64,6 +64,7 @@
     sioyek
     typora
     waybar
+    onlyoffice-desktopeditors
     overskride
     protonvpn-gui
     qbittorrent
