@@ -11,7 +11,7 @@
       xnix-gc = "sudo nix store gc --debug";
       vim = "nvim";
       note = "cd ~/Notes/ && vim README.md";
-      pd = "curl -F \"c=@-\" \"https://fars.ee/\""
+      pd = "curl -F \"c=@-\" \"https://fars.ee/\"";
     };
     initContent = ''
       PATH=$PATH:/home/xilong/.local/bin
