@@ -9,7 +9,7 @@
     
         "modules-left": ["hyprland/workspaces"],
         "modules-center": [],
-        "modules-right": ["backlight", "wireplumber", "network", "bluetooth", "tray", "idle_inhibitor", "battery", "clock"],
+        "modules-right": ["wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "battery", "clock"],
     
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -29,19 +29,19 @@
             }
         },
     
+        "wireplumber": {
+            "format": "󰽰{icon}",
+            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+            "format-muted": "󰽺",
+            "tooltip-format": "Volume: {volume}%",
+            "max-volume": 100,
+            "scroll-step": 5
+        },
+    
         "backlight": {
             "format": "{icon}",
             "format-icons": ["", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-            "tooltip-format": "{percent}%",
-        },
-    
-        "wireplumber": {
-            "format": "{icon}",
-            "format-icons": ["󰕿", "󰖀", "󰕾"],
-            "format-muted": "󰝟",
-            "tooltip-format": "{volume}%",
-            "max-volume": 100,
-            "scroll-step": 5
+            "tooltip-format": "Backlight: {percent}%",
         },
     
         "network": {
@@ -133,10 +133,14 @@
     }
     
     #wireplumber {
-        font-size: 20px;
+        font-size: 14px;
         margin-left: 0px;
     }
-    
+
+    #wireplumber.muted {
+        font-size: 20px;
+    }
+
     #network {
         margin-left: -6px;
     }
