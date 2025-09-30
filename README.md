@@ -9,9 +9,12 @@
 │       ├── git.nix
 │       ├── hyprland.nix
 │       ├── kitty.nix
+│       ├── mako.nix
 │       ├── nsxiv.nix
+│       ├── protondrive.nix
 │       ├── rofi.nix
 │       ├── waybar.nix
+│       ├── yazi.nix
 │       └── zsh.nix
 ├── os.d ： 系统级配置
 │   ├── modules

@@ -91,9 +91,29 @@
         },
     
         "clock": {
-          "interval": 1,
-          "format": "{:%H%n%M}",
-          "tooltip-format": "{:%Y-%m-%d %H:%M:%S}",
+            "interval": 1,
+            "format": "{:%H%n%M}",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>\n\n{:%Y-%m-%d %H:%M:%S}",
+            "calendar": {
+                "mode"          : "month",
+                "mode-mon-col"  : 3,
+                "weeks-pos"     : "right",
+                "on-scroll"     : 1,
+                "format": {
+                    "months":     "<span color='#bb9af7'><b>{}</b></span>",
+                    "days":       "<span color='#a9b1d6'><b>{}</b></span>",
+                    "weeks":      "<span color='#3d59a1'><b>W{}</b></span>",
+                    "weekdays":   "<span color='#7aa2f7'><b>{}</b></span>",
+                    "today":      "<span color='#f7768e'><b><u>{}</u></b></span>"
+                }
+            },
+            "actions":  {
+                "on-click-right": "mode",
+                "on-scroll-up": "tz_up",
+                "on-scroll-down": "tz_down",
+                "on-scroll-up": "shift_up",
+                "on-scroll-down": "shift_down"
+            }
         }
     }
   '';
