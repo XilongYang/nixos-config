@@ -32,6 +32,7 @@
     bind = $mod, E, exec, kitty yazi
     bind = $mod, R, exec, rofi -show drun -show-icons
     bind = $mod SHIFT, S, exec, hyprshot -m region -o /home/xilong/Pictures/Screenshots/
+    bind = $mod, Print, exec, hyprshot -m output -o /home/xilong/Pictures/Screenshots/
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
 
