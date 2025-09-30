@@ -117,7 +117,11 @@
 
     input:touchpad:natural_scroll = true
 
-    gesture = 3, horizontal, workspace
+    gesture = 3, vertical, workspace
+    
+    animations {
+        animation = workspaces,1,5,default,slidevert
+    }
 
     misc {
         disable_hyprland_logo = true
