@@ -63,6 +63,7 @@
     rclone
     rofi
     sioyek
+    telegram-desktop
     typora
     waybar
     onlyoffice-desktopeditors
