@@ -16,7 +16,7 @@
             "on-click": "activate",
             "format-icons": {
                 "active": "󱄅",
-                "default": "󰏝",
+                "default": " 🞇",
             },
             "icon-size": 10,
             "sort-by-number": true,
@@ -30,11 +30,11 @@
         },
     
         "wireplumber": {
-            "format": "󰽰{icon}",
-            "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+            "format": "{icon}",
+            "format-icons": ["󰽯 ", "󰽯⡀", "󰽯⣀", "󰽯⣄", "󰽯⣤", "󰽯⣦", "󰽯⣶", "󰽯⣷", "󰽯⣿", "󰽰⡀", "󰽰⣀", "󰽰⣄", "󰽰⣤", "󰽰⣦", "󰽰⣶", "󰽰⣷", "󰽰⣿"],
             "format-muted": "󰽺",
             "tooltip-format": "Volume: {volume}%",
-            "max-volume": 100,
+            "max-volume": 80,
             "scroll-step": 5
         },
     
@@ -72,9 +72,11 @@
         "idle_inhibitor": {
             "format": "{icon}",
             "format-icons": {
-                "activated": "󰅶",
-                "deactivated": "󰾪"
-            }
+                "activated": "",
+                "deactivated": ""
+            },
+            "tooltip-format-activated": "Idle inhibitor active.",
+            "tooltip-format-deactivated": "Normal idle behavior."
         },
     
         "battery": {
@@ -173,7 +175,8 @@
         margin-left: 2px;
     }
     
-    #idle_inhibitor {
+    #idle_inhibitor.activated {
+        color: #f7768e;
     }
     
     #battery {
