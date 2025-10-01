@@ -57,7 +57,7 @@
     
     # Lockscreen
     bind = $mod ALT, L, exec, hyprlock 
-    bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend
+    bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend-then-hibernate
 
     # Resize with mod + SHIFT + hjkl
     bind = $mod SHIFT, H, resizeactive, -100 0
@@ -184,7 +184,7 @@
     # Suspend
     listener {
         timeout = 920
-        on-timeout = systemctl suspend-then-hibrnate
+        on-timeout = systemctl suspend-then-hibernate
     }
   '';
 }
