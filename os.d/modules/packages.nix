@@ -65,6 +65,7 @@
     rofi
     sioyek
     telegram-desktop
+    thunderbird
     typora
     waybar
     onlyoffice-desktopeditors
