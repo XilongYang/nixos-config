@@ -32,6 +32,7 @@
     p7zip
     powertop
     python3
+    pipx
     rclone
     tree
     where-is-my-sddm-theme
