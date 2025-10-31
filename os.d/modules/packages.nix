@@ -56,7 +56,6 @@
     foliate
     kitty
     mpv
-    musescore
     neovim
     nsxiv
     obs-studio
