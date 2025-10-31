@@ -17,7 +17,13 @@
   # Input Method
   i18n.inputMethod = {
     type = "fcitx5";
-    enable = false;
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-configtool
+      fcitx5-rime
+      libsForQt5.fcitx5-qt
+      fcitx5-gtk
+    ];
   };
 
 }
