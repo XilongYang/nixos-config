@@ -116,6 +116,7 @@
     bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
 
     input:touchpad:natural_scroll = true
+    input:touchpad:scroll_factor = 0.2
 
     gesture = 3, vertical, workspace
     
