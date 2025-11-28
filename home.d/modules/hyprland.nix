@@ -139,19 +139,31 @@
     }
     
     input-field {
-        monitor = eDP-1
-        size = 1500, 300
+        monitor =
+        size = 100%, 10%
+        rounding = 0
+
         outline_thickness = 0
-        dots_size = 0.8
+        outer_color    = rgba(0,0,0,0)
+
+        dots_size = 1.3
         dots_spacing = 0.2
-        dots_text_format = *
-        outer_color = rgba(0,0,0,0)
-        inner_color = rgba(0,0,0,0)
-        font_color = rgba(255,255,255,1.0)
+        dots_center = true 
+        dots_text_format = ∗
+
+        inner_color    = rgba(0,0,0,0)
+        check_color    = rgba(0, 150, 255, 0.5)
+        fail_color     = rgba(204, 34, 34, 0.5)
+        capslock_color = rgba(255, 150, 0, 0.5)
+        numlock_color  = rgba(255, 150, 0, 0.5)
+        bothlock_color = rgba(255, 150, 0, 0.5)
+
+        font_color     = rgba(255,255,255,1.0)
+
         halign = center
         valign = center
+
         placeholder_text = <Password>
-        placeholder_static = true
     }
   '';
 
