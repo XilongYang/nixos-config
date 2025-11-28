@@ -24,6 +24,7 @@
     hyprlock
     hyprpaper
     hyprshot
+    libnotify
     mako
     mandoc
     nodejs
@@ -55,8 +56,11 @@
     google-chrome
     foliate
     kitty
+    mpc
+    mpd
     mpv
     musescore
+    ncmpcpp
     neovim
     nsxiv
     obs-studio
