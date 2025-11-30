@@ -5,6 +5,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Base
+    android-tools
     appimage-run
     bochs
     brightnessctl
