@@ -77,6 +77,7 @@
     overskride
     protonvpn-gui
     qbittorrent
+    valent
     yazi
 
     #LSPs
