@@ -74,6 +74,7 @@
     thunderbird
     typora
     waybar
+    ollama
     onlyoffice-desktopeditors
     overskride
     protonvpn-gui
