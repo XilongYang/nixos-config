@@ -11,6 +11,8 @@
         ${pkgs.mpd}/bin/mpd --no-daemon
       '';
     };
+
+    Install.WantedBy = [ "default.target" ];
   };
 
   xdg.configFile."mpd/mpd.conf".text = ''
