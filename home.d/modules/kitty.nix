@@ -7,6 +7,7 @@
       size = 14;
     };
     settings = {
+      touch_scroll_multiplier = 3.0;
       cursor_blink_interval = 0;
       enable_audio_bell = "no";
         foreground = "#a9b1d6";
