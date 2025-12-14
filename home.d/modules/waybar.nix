@@ -1,5 +1,14 @@
 { config, ... }:
 {
+  xdg.configFile."waybar/scripts/battery-status.sh" = {
+    executable = true;
+    source = ../../assets/scripts/battery-status.sh;
+  };
+
+  xdg.configFile."waybar/assets/ringing.wav" = {
+    source = ../../assets/sounds/ringing.wav;
+  };
+
   xdg.configFile."waybar/config".text = ''
     {
         "layer": "top",
@@ -9,7 +18,7 @@
     
         "modules-left": ["hyprland/workspaces"],
         "modules-center": [],
-        "modules-right": ["wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "battery", "clock"],
+        "modules-right": ["wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "custom/battery", "clock"],
     
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -78,20 +87,15 @@
             "tooltip-format-activated": "Idle inhibitor active.",
             "tooltip-format-deactivated": "Normal idle behavior."
         },
-    
-        "battery": {
-            "bat": "BAT0",
-            "interval": 5,
-            "states": {
-               "warning": 10,
-               "critical": 5
-            },
-            "format": "{icon}",
-            "format-charging":"󰂄",
-            "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "tooltip-format": "{capacity}%, {time}",
-        },
-    
+
+        "custom/battery": {
+           "interval": 5,
+           "return-type": "json",
+           "exec": "~/.config/waybar/scripts/battery-status.sh",
+           "format": "{text}",
+           "tooltip": true
+        },   
+
         "clock": {
             "interval": 1,
             "format": "{:%H%n%M}",
@@ -158,11 +162,11 @@
         font-size: 14px;
         margin-left: 0px;
     }
-
+    
     #wireplumber.muted {
         font-size: 20px;
     }
-
+    
     #network {
         margin-left: -6px;
     }
@@ -179,8 +183,16 @@
         color: #f7768e;
     }
     
-    #battery {
+    #custom-battery {
         margin-left: 0px;
+    }
+    
+    #custom-battery.warning {
+        color: #e0af68;
+    }
+    
+    #custom-battery.critical {
+        color: #f7768e;
     }
     
     #clock {
