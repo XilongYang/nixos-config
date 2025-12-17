@@ -27,6 +27,7 @@
     hyprpolkitagent
     hyprshot
     libnotify
+    linux-firmware
     mako
     mandoc
     nodejs
@@ -37,6 +38,7 @@
     python3
     pipx
     rclone
+    sof-firmware
     tree
     where-is-my-sddm-theme
     unrar
