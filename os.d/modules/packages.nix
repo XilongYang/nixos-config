@@ -24,6 +24,7 @@
     hypridle
     hyprlock
     hyprpaper
+    hyprpolkitagent
     hyprshot
     libnotify
     mako
