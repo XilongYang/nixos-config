@@ -27,6 +27,7 @@
     exec-once = fcitx5 -d -r
     exec-once = fcitx5-remote -d -r
     exec-once = xrdb ~/.Xresources
+    exec-once = systemctl --user start hyprpolkitagent.service
 
     bind = $mod, RETURN, exec, kitty
     bind = $mod, E, exec, kitty yazi
