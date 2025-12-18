@@ -45,7 +45,7 @@
     
         "custom/mic": {
           "exec": "~/.config/waybar/scripts/mic-status.sh",
-          "interval": 2,
+          "interval": 1,
           "return-type": "json",
           "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
           "format": "{text}",
@@ -83,7 +83,8 @@
             "format-connected": "󰂱",
             "tooltip-format": "{controller_alias}",
             "tooltip-format-connected": "{device_enumerate}",
-            "tooltip-format-enumerate-connected": "{device_alias}"
+            "tooltip-format-enumerate-connected": "{device_alias}",
+            "on-click": "overskride"
         },
     
         "tray": {
