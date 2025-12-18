@@ -5,6 +5,11 @@
     source = ../../assets/scripts/battery-status.sh;
   };
 
+  xdg.configFile."waybar/scripts/mic-status.sh" = {
+    executable = true;
+    source = ../../assets/scripts/mic-status.sh;
+  };
+
   xdg.configFile."waybar/assets/ringing.wav" = {
     source = ../../assets/sounds/ringing.wav;
   };
@@ -18,7 +23,7 @@
     
         "modules-left": ["hyprland/workspaces"],
         "modules-center": [],
-        "modules-right": ["wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "custom/battery", "clock"],
+        "modules-right": [ "custom/mic", "wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "custom/battery", "clock"],
     
         "hyprland/workspaces": {
             "format": "{icon}",
@@ -38,6 +43,14 @@
             }
         },
     
+        "custom/mic": {
+          "exec": "~/.config/waybar/scripts/mic-status.sh",
+          "interval": 2,
+          "return-type": "json",
+          "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+          "format": "{text}",
+        },
+
         "wireplumber": {
             "format": "{icon}",
             "format-icons": ["󰽯 ", "󰽯⡀", "󰽯⣀", "󰽯⣄", "󰽯⣤", "󰽯⣦", "󰽯⣶", "󰽯⣷", "󰽯⣿", "󰽰⡀", "󰽰⣀", "󰽰⣄", "󰽰⣤", "󰽰⣦", "󰽰⣶", "󰽰⣷", "󰽰⣿"],
@@ -158,6 +171,14 @@
     #backlight {
     }
     
+    #custom-mic.mic-active { 
+        color: #f7768e;
+    }
+
+    #custom-mic.mic-muted  {
+        color: #e0af68;
+    }
+
     #wireplumber {
         font-size: 14px;
         margin-left: 0px;
