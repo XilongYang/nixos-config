@@ -26,6 +26,7 @@
     hyprpaper
     hyprpolkitagent
     hyprshot
+    jq
     libnotify
     linux-firmware
     mako
