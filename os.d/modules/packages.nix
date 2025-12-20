@@ -34,6 +34,7 @@
     nodejs
     ntfs3g
     openssh
+    openssl
     p7zip
     powertop
     python3
