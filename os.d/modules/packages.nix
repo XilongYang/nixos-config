@@ -59,6 +59,7 @@
     gimp3
     goldendict-ng
     google-chrome
+    graphviz
     foliate
     kitty
     mpc
