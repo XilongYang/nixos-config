@@ -21,6 +21,7 @@
     git
     git-filter-repo
     gnumake
+    gnupg
     hypridle
     hyprlock
     hyprpaper
@@ -36,6 +37,8 @@
     openssh
     openssl
     p7zip
+    pass
+    pinentry-curses
     powertop
     python3
     pipx
