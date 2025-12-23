@@ -7,17 +7,17 @@
 
   xdg.configFile."hypr/hyprland.conf".text = ''
     monitor = , highres, auto, 2
-
+    
     general {
         gaps_in = 4
         gaps_out = 10
         resize_on_border = true
     }
-
+    
     xwayland {
         force_zero_scaling = true
     }
-
+    
     $mod = "SUPER"
     exec-once = hyprpaper
     exec-once = hypridle
@@ -28,62 +28,55 @@
     exec-once = fcitx5-remote -d -r
     exec-once = xrdb ~/.Xresources
     exec-once = systemctl --user start hyprpolkitagent.service
-
+    
     bind = $mod, RETURN, exec, kitty
     bind = $mod, E, exec, kitty yazi
     bind = $mod, R, exec, rofi -show drun -show-icons
-    bind = $mod SHIFT, S, exec, hyprshot -m region -o /home/xilong/Pictures/Screenshots/
+    bind = $mod SHIFT, S, exec, hyprshot -z -m region -o /home/xilong/Pictures/Screenshots/
     bind = $mod, Print, exec, hyprshot -m output -o /home/xilong/Pictures/Screenshots/
     bind = ALT, S, resizeactive,
     bind = ALT, F4, killactive,
-
+    
     bind = $mod, TAB, cyclenext, tiled
-
+    
     # Toggle Fullscreen
     bind = $mod SHIFT, F, fullscreen
-
+    
     # Toggle floating
     bind = $mod, F, togglefloating
     bind = ALT, TAB, cyclenext, floating
-
+    
     bindm = $mod, mouse:272, movewindow
     bindm = $mod, mouse:273, resizewindow
-
-    windowrule = float,  class:^(xdg-desktop-portal-gtk)$
-    windowrule = center, class:^(xdg-desktop-portal-gtk)$
-    windowrule = size 1200 800, class:^(xdg-desktop-portal-gtk)$
-
-    windowrule = float,  class:^(google-chrome|chromium|brave-browser)$, initialTitle:^(.*)(Picture-in-Picture)(.*)$
-    windowrule = center, class:^(google-chrome|chromium|brave-browser)$, initialTitle:^(.*)(Picture-in-Picture)(.*)$
     
     # Lockscreen
     bind = $mod ALT, L, exec, hyprlock 
     bind = CTRL ALT, L, exec, hyprlock & sleep 1 && systemctl suspend-then-hibernate
-
+    
     # Resize with mod + SHIFT + hjkl
     bind = $mod SHIFT, H, resizeactive, -100 0
     bind = $mod SHIFT, L, resizeactive, 100 0
     bind = $mod SHIFT, J, resizeactive, 0 100
     bind = $mod SHIFT, K, resizeactive, 0 -100
-
+    
     # Resize with mod + CTRL + SHIFT + hjkl
     bind = $mod CTRL SHIFT, H, resizeactive, -20 0
     bind = $mod CTRL SHIFT, L, resizeactive, 20 0
     bind = $mod CTRL SHIFT, J, resizeactive, 0 20
     bind = $mod CTRL SHIFT, K, resizeactive, 0 -20
-
+    
     # Move focus with mod + hjkl
     bind = $mod, H, movefocus, l
     bind = $mod, L, movefocus, r
     bind = $mod, J, movefocus, d
     bind = $mod, K, movefocus, u
-
+    
     # Swap focus with mod + CTRL + hjkl
     bind = $mod CTRL, H, swapwindow, l
     bind = $mod CTRL, L, swapwindow, r
     bind = $mod CTRL, K, swapwindow, u
     bind = $mod CTRL, J, swapwindow, d
-
+    
     # Switch workspaces with mod + [0-9]
     bind = $mod, 1, workspace, 1
     bind = $mod, 2, workspace, 2
@@ -107,7 +100,7 @@
     bind = $mod SHIFT, 8, movetoworkspace, 8
     bind = $mod SHIFT, 9, movetoworkspace, 9
     bind = $mod SHIFT, 0, movetoworkspace, 10
-
+    
     # Laptop multimedia keys for volume and LCD brightness
     bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 0.8 @DEFAULT_AUDIO_SINK@ 5%+
     bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
@@ -115,20 +108,33 @@
     bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
     bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
     bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
-
+    
     input:touchpad:natural_scroll = true
     input:touchpad:scroll_factor = 0.2
-
+    
     gesture = 3, vertical, workspace
     
     animations {
         animation = workspaces,1,5,default,slidevert
     }
-
+    
     misc {
         disable_hyprland_logo = true
         disable_splash_rendering = true
     }
+    
+    # Window rules
+    windowrulev2 = float,  class:^(chrome-.*)$
+    windowrulev2 = center, class:^(chrome-.*)$
+    windowrulev2 = size 1200 800, class:^(chrome-.*)$
+    
+    windowrulev2 = float,  class:^(xdg-desktop-portal-gtk)$
+    windowrulev2 = center, class:^(xdg-desktop-portal-gtk)$
+    windowrulev2 = size 1200 800, class:^(xdg-desktop-portal-gtk)$
+    
+    windowrulev2 = float, class:^(google-chrome)$, title:^(Print)$
+    windowrulev2 = center, class:^(google-chrome)$, title:^(Print)$
+    windowrulev2 = size 1200 800, class:^(google-chrome)$, title:^(Print)$
   '';
 
   xdg.configFile."hypr/hyprlock.conf".text = ''
