@@ -75,7 +75,7 @@
             "tooltip-format-wifi": "{essid} ({signalStrength}%)",
             "tooltip-format-ethernet": "{ifname}",
             "tooltip-format-disconnected": "Disconnected",
-            "on-click": "kitty -e nmtui",
+            "on-click": "kitty --title nmtui -e nmtui",
         },
     
         "bluetooth": {
