@@ -135,6 +135,14 @@
     windowrulev2 = float, class:^(google-chrome)$, title:^(Print)$
     windowrulev2 = center, class:^(google-chrome)$, title:^(Print)$
     windowrulev2 = size 1200 800, class:^(google-chrome)$, title:^(Print)$
+
+    windowrulev2 = float, class:^(io.github.kaii_lb.Overskride)$
+    windowrulev2 = center, class:^(io.github.kaii_lb.Overskride)$
+    windowrulev2 = size 1200 800, class:^(io.github.kaii_lb.Overskride)$
+    
+    windowrulev2 = float, class:^(kitty)$, title:^(nmtui)$
+    windowrulev2 = center, class:^(kitty)$, title:^(nmtui)$
+    windowrulev2 = size 1200 800, class:^(kitty)$, title:^(nmtui)$
   '';
 
   xdg.configFile."hypr/hyprlock.conf".text = ''
