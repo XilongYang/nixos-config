@@ -19,8 +19,10 @@ EFULL=$(cat "$BAT/energy_full")
 
 if [ "$STATUS" = "Discharging" ]; then
   sec=$(( ENOW * 3600 / PNOW ))
-elif [[ "$STATUS" = "Charging"  ||  "$STATUS" = "Full" ]]; then
+elif [[ "$STATUS" = "Charging" ]]; then
   sec=$(( (EFULL - ENOW) * 3600 / PNOW ))
+elif [[ "$STATUS" = "Full" ]]; then
+  sec=0
 fi
 TIME=$(printf "%dh %02dm" $((sec/3600)) $((sec%3600/60)) 2>/dev/null || true)
 
