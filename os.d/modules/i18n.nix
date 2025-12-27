@@ -23,6 +23,7 @@
       fcitx5-rime
       libsForQt5.fcitx5-qt
       fcitx5-gtk
+      fcitx5-mozc
     ];
   };
 
