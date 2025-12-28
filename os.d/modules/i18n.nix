@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
-{
+let 
+  myMozcIcons= builtins.path {
+    name = "my-mozc-icons";
+    path = ../../assets/icons/mozc;
+  };
+in {
   environment.variables.WAYLAND_IM_MODULE = "fcitx";
   environment.variables.QT_IM_MODULE = "fcitx";
   environment.variables.XMODIFIERS = "@im=fcitx";
@@ -27,4 +32,18 @@
     ];
   };
 
+  # Change mozc icon to hiragana icon
+  nixpkgs.overlays = [
+    (final: prev: {
+      fcitx5-mozc = prev.fcitx5-mozc.overrideAttrs (old: {
+        postInstall = (old.postInstall or "") + ''
+          iconDir="$out/share/icons"
+  
+          echo "Patching Mozc icons in $iconDir"
+  
+          install -Dm644 "${myMozcIcons}/mozc.png" "$iconDir/hicolor/128x128/apps/org.fcitx.Fcitx5.fcitx_mozc.png"
+        '';
+      });
+    })
+  ];
 }
