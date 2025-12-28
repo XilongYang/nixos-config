@@ -106,6 +106,12 @@
     # Layout
     Layout=
     
+    [Groups/0/Items/2]
+    # Name
+    Name=mozc
+    # Layout
+    Layout=
+
     [GroupOrder]
     0=Default
   '';
