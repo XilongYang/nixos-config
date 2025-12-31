@@ -20,20 +20,11 @@
         "position": "left",
         "height": 900,
         "spacing": 15,
+        "output": "eDP-1",
     
-        "modules-left": ["hyprland/workspaces"],
-        "modules-center": [],
-        "modules-right": [ "custom/mic", "wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "custom/battery", "clock"],
+        "include": "modules",
     
         "hyprland/workspaces": {
-            "format": "{icon}",
-            "on-click": "activate",
-            "format-icons": {
-                "active": "󱄅",
-                "default": " 🞇",
-            },
-            "icon-size": 10,
-            "sort-by-number": true,
             "persistent-workspaces": {
                 "1": [],
                 "2": [],
@@ -43,6 +34,51 @@
             }
         },
     
+        "modules-left": ["hyprland/workspaces"],
+        "modules-center": [],
+        "modules-right": [ "custom/mic", "wireplumber", "backlight", "network", "bluetooth", "tray", "idle_inhibitor", "custom/battery", "clock"],
+    }
+  '';
+
+  xdg.configFile."waybar/config-ext".text = ''
+    {
+        "layer": "top",
+        "position": "left",
+        "height": 1080,
+        "spacing": 15,
+        "output": "DP-1",
+    
+        "include": "modules",
+    
+        "hyprland/workspaces": {
+            "persistent-workspaces": {
+                "6": [],
+                "7": [],
+                "8": [],
+                "9": [],
+                "10": [],
+            }
+        },
+    
+        "modules-left": ["hyprland/workspaces"],
+        "modules-center": [],
+        "modules-right": [ "custom/mic", "wireplumber", "network", "bluetooth", "tray", "idle_inhibitor", "custom/battery", "clock"],
+    }
+  '';
+
+  xdg.configFile."waybar/modules".text = ''
+    {
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "on-click": "activate",
+            "format-icons": {
+                "active": "󱄅",
+                "default": " 🞇",
+            },
+            "icon-size": 10,
+            "sort-by-number": true,
+        },
+    
         "custom/mic": {
           "exec": "~/.config/waybar/scripts/mic-status.sh",
           "interval": 1,
@@ -50,7 +86,7 @@
           "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
           "format": "{text}",
         },
-
+    
         "wireplumber": {
             "format": "{icon}",
             "format-icons": ["󰽯 ", "󰽯⡀", "󰽯⣀", "󰽯⣄", "󰽯⣤", "󰽯⣦", "󰽯⣶", "󰽯⣷", "󰽯⣿", "󰽰⡀", "󰽰⣀", "󰽰⣄", "󰽰⣤", "󰽰⣦", "󰽰⣶", "󰽰⣷", "󰽰⣿"],
@@ -102,7 +138,7 @@
             "tooltip-format-activated": "Idle inhibitor active.",
             "tooltip-format-deactivated": "Normal idle behavior."
         },
-
+    
         "custom/battery": {
            "interval": 5,
            "return-type": "json",
@@ -110,7 +146,7 @@
            "format": "{text}",
            "tooltip": true
         },   
-
+    
         "clock": {
             "interval": 1,
             "format": "{:%H%n%M}",

@@ -6,7 +6,8 @@
   '';
 
   xdg.configFile."hypr/hyprland.conf".text = ''
-    monitor = , highres, auto, 2
+    monitor = eDP-1, 2880x1800@120, 0x1080, 2
+    monitor = DP-1, 1920x1080@60, 0x0, 1
     
     general {
         gaps_in = 4
@@ -18,10 +19,23 @@
         force_zero_scaling = true
     }
     
+    # Bind workspaces to monitors
+    workspace = 1, monitor:eDP-1
+    workspace = 2, monitor:eDP-1
+    workspace = 3, monitor:eDP-1
+    workspace = 4, monitor:eDP-1
+    workspace = 5, monitor:eDP-1
+    workspace = 6, monitor:DP-1
+    workspace = 7, monitor:DP-1
+    workspace = 8, monitor:DP-1
+    workspace = 9, monitor:DP-1
+    workspace = 10, monitor:DP-1
+
     $mod = "SUPER"
     exec-once = hyprpaper
     exec-once = hypridle
     exec-once = waybar
+    exec-once = waybar -c ~/.config/waybar/config-ext
     exec-once = mako
     exec-once = hyprctl setcursor Adwaita 24
     exec-once = fcitx5 -d -r
