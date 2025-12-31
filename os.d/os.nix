@@ -54,7 +54,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Enable the Hyprland.
+  # Enable SDDM Display Manager
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
@@ -67,7 +67,18 @@
       qtsvg
       qtmultimedia
     ];
+    settings = {
+      General = {
+        DisplayCommand = "${pkgs.writeShellScript "sddm-display-setup" ''
+          ${pkgs.xorg.xrandr}/bin/xrandr \
+            --output eDP-1 --primary --mode 2880x1800 --pos 0x0 \
+            --output DP-1 --off
+        ''}";
+      };
+    };
   };
+
+  # Enable the Hyprland.
   programs.hyprland.enable = true;
 
   # Enable the locate & updatedb
