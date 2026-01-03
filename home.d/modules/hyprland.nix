@@ -6,8 +6,8 @@
   '';
 
   xdg.configFile."hypr/hyprland.conf".text = ''
-    monitor = eDP-1, 2880x1800@120, 0x1080, 2
-    monitor = DP-1, 1920x1080@60, 0x0, 1
+    monitor = eDP-1, 2880x1800@120, 0x0, 2
+    monitor = DP-1, 1920x1080@60, 0x-1080, 1
     
     general {
         gaps_in = 4
