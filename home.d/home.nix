@@ -26,6 +26,12 @@
     theme=Qogir-dark
   '';
 
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   imports = let dir = ./modules;
     in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
