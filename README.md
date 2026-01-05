@@ -10,9 +10,12 @@
 │       ├── hyprland.nix
 │       ├── kitty.nix
 │       ├── mako.nix
-│       ├── nsxiv.nix
-│       ├── protondrive.nix
+│       ├── mpd.nix
+│       ├── ncmpcpp.nix
+│       ├── ollama.nix
+│       ├── rclone.nix
 │       ├── rofi.nix
+│       ├── save_notes.nix
 │       ├── waybar.nix
 │       ├── yazi.nix
 │       └── zsh.nix
@@ -20,6 +23,7 @@
 │   ├── modules
 │   │   ├── boot.nix
 │   │   ├── fonts.nix
+│   │   ├── gpg-agent.nix
 │   │   ├── hardware.nix
 │   │   ├── i18n.nix
 │   │   ├── network.nix
