@@ -49,7 +49,7 @@
     bind = $mod SHIFT, S, exec, hyprshot -z -m region -o /home/xilong/Pictures/Screenshots/
     bind = $mod, Print, exec, hyprshot -m output -o /home/xilong/Pictures/Screenshots/
     bind = ALT, S, resizeactive,
-    bind = ALT, F4, killactive,
+    bind = $mod, Q, killactive,
     
     bind = $mod, TAB, cyclenext, tiled
     
