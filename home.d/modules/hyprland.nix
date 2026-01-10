@@ -10,6 +10,10 @@
     monitor = DP-1, 1920x1080@60, 0x-1080, 1
     monitor = DP-2, 1920x1080@60, 0x-1080, 1
     
+    # Laptop disable internal display when close
+    bindel = ,switch:on:Lid Switch,exec,hyprctl keyword monitor "eDP-1,disable"
+    bindel = ,switch:off:Lid Switch,exec,hyprctl keyword monitor "eDP-1,preferred,2880x1800@120,2"
+    
     general {
         gaps_in = 4
         gaps_out = 10
@@ -115,7 +119,7 @@
     bind = $mod SHIFT, 8, movetoworkspace, 8
     bind = $mod SHIFT, 9, movetoworkspace, 9
     bind = $mod SHIFT, 0, movetoworkspace, 10
-    
+
     # Laptop multimedia keys for volume and LCD brightness
     bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 0.8 @DEFAULT_AUDIO_SINK@ 5%+
     bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
