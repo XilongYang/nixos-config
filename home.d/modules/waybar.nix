@@ -46,7 +46,7 @@
         "position": "left",
         "height": 1080,
         "spacing": 15,
-        "output": "DP-1",
+        "output": [ "DP-1", "DP-2" ],
     
         "include": "modules",
     
