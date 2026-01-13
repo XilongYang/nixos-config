@@ -88,8 +88,10 @@
     overskride
     protonvpn-gui
     qbittorrent
+    qrencode
     valent
     yazi
+    zbar
 
     #LSPs
     clang-tools
