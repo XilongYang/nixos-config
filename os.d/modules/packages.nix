@@ -5,6 +5,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Base
+    alsa-utils
     android-tools
     appimage-run
     bochs
