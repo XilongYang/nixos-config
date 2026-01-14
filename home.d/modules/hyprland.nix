@@ -15,10 +15,6 @@
     monitor = DP-1, 1920x1080@60, 0x-1080, 1
     monitor = DP-2, 1920x1080@60, 0x-1080, 1
     
-    # Laptop disable internal display when close
-    bindel = ,switch:on:Lid Switch,exec,hyprctl keyword monitor "eDP-1,disable"
-    bindel = ,switch:off:Lid Switch,exec,hyprctl keyword monitor "eDP-1,preferred,2880x1800@120,2"
-    
     general {
         gaps_in = 4
         gaps_out = 10
