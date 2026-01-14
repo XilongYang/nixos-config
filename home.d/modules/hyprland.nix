@@ -1,8 +1,13 @@
 { config, ... }:
 {
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload   = /home/xilong/Pictures/Wallpaper/totoro.png
-    wallpaper = ,/home/xilong/Pictures/Wallpaper/totoro.png
+    wallpaper {
+        monitor = 
+        path = /home/xilong/Pictures/Wallpaper/totoro.png
+        fit_mode = cover
+    }
+
+    splash = false
   '';
 
   xdg.configFile."hypr/hyprland.conf".text = ''
