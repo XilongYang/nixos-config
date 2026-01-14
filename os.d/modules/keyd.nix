@@ -34,7 +34,7 @@
           comma      = "end";
 
           backslash  = "insert";
-          grave      = "delete";
+          delete     = "delete";
 
           h          = "kpasterisk";
           j          = "kpslash";
