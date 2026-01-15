@@ -59,6 +59,7 @@
     aria2
     adwaita-icon-theme
     chez
+    cloudflared
     fastfetch
     gh
     gimp3
