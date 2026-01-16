@@ -39,6 +39,7 @@
     openssl
     p7zip
     pass
+    pandoc
     pinentry-curses
     powertop
     python3
