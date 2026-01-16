@@ -147,25 +147,52 @@
     }
     
     # Window rules
-    windowrulev2 = float,  class:^(chrome-.*)$
-    windowrulev2 = center, class:^(chrome-.*)$
-    windowrulev2 = size 1200 800, class:^(chrome-.*)$
+    windowrule {
+      name = chrome sub windows
+      match:class = ^(chrome-.*)$
     
-    windowrulev2 = float,  class:^(xdg-desktop-portal-gtk)$
-    windowrulev2 = center, class:^(xdg-desktop-portal-gtk)$
-    windowrulev2 = size 1200 800, class:^(xdg-desktop-portal-gtk)$
+      float  = on
+      center = on
+      size   = 1200 800
+    }
     
-    windowrulev2 = float, class:^(google-chrome)$, title:^(Print)$
-    windowrulev2 = center, class:^(google-chrome)$, title:^(Print)$
-    windowrulev2 = size 1200 800, class:^(google-chrome)$, title:^(Print)$
+    windowrule {
+      name = gtk portals
+      match:class = ^(xdg-desktop-portal-gtk)$
 
-    windowrulev2 = float, class:^(io.github.kaii_lb.Overskride)$
-    windowrulev2 = center, class:^(io.github.kaii_lb.Overskride)$
-    windowrulev2 = size 1200 800, class:^(io.github.kaii_lb.Overskride)$
-    
-    windowrulev2 = float, class:^(kitty)$, title:^(nmtui)$
-    windowrulev2 = center, class:^(kitty)$, title:^(nmtui)$
-    windowrulev2 = size 1200 800, class:^(kitty)$, title:^(nmtui)$
+      float  = on
+      center = on
+      size   = 1200 800
+    }
+
+    windowrule {
+      name = chrome print
+      match:class= ^(google-chrome)$
+      match:title= ^(Print)$
+
+      float  = on
+      center = on
+      size   = 1200 800
+    }
+
+    windowrule {
+      name = overskride
+      match:class= ^(io.github.kaii_lb.Overskride)$
+
+      float  = on
+      center = on
+      size   = 1200 800
+    }
+
+    windowrule {
+      name = nmtui
+      match:class= ^(kitty)$
+      match:title= ^(nmtui)$
+
+      float  = on
+      center = on
+      size   = 1200 800
+    }
   '';
 
   xdg.configFile."hypr/hyprlock.conf".text = ''
