@@ -2,7 +2,7 @@
 let 
   myMozcIcons= builtins.path {
     name = "my-mozc-icons";
-    path = ../../assets/icons/mozc;
+    path = ../../../../assets/icons/mozc;
   };
 in {
   environment.variables.WAYLAND_IM_MODULE = "fcitx";

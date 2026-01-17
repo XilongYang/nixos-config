@@ -2,7 +2,7 @@
 {
   xdg.configFile."scripts/rclone-sync.sh" = {
     executable = true;
-    source = ../../assets/scripts/rclone-sync.sh;
+    source = ../../../../assets/scripts/rclone-sync.sh;
   };
 
   systemd.user.services."rclone" = {

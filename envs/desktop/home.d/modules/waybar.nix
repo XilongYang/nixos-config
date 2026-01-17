@@ -2,16 +2,16 @@
 {
   xdg.configFile."waybar/scripts/battery-status.sh" = {
     executable = true;
-    source = ../../assets/scripts/battery-status.sh;
+    source = ../../../../assets/scripts/battery-status.sh;
   };
 
   xdg.configFile."waybar/scripts/mic-status.sh" = {
     executable = true;
-    source = ../../assets/scripts/mic-status.sh;
+    source = ../../../../assets/scripts/mic-status.sh;
   };
 
   xdg.configFile."waybar/assets/ringing.wav" = {
-    source = ../../assets/sounds/ringing.wav;
+    source = ../../../../assets/sounds/ringing.wav;
   };
 
   xdg.configFile."waybar/config".text = ''

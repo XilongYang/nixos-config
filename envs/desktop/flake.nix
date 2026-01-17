@@ -1,5 +1,5 @@
 {
-  description = "Xilong's Desktop";
+  description = "Xilong's Server";
 
   nixConfig = {
     substituters = [
@@ -15,16 +15,22 @@
   
   outputs = inputs@{nixpkgs, home-manager, ...} : {
     nixosConfigurations = {
-      "nixos" = nixpkgs.lib.nixosSystem {
+      "desktop" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ../base/os.d/os.nix
           ./os.d/os.nix
 
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
-            home-manager.users.xilong = import ./home.d/home.nix;
+            home-manager.users.xilong = {
+              imports = [
+                ../base/home.d/home.nix
+                ./home.d/home.nix
+              ];
+            };
           }
         ]; 
       };
