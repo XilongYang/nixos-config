@@ -13,6 +13,11 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  service.btrfsAutoSnapshot = {
+    enable = true;
+    device = "/dev/disk/by-uuid/5b68ea29-4079-4d6c-a3f0-d95c67bae2bc";
+  };
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/5b68ea29-4079-4d6c-a3f0-d95c67bae2bc";
       fsType = "btrfs";

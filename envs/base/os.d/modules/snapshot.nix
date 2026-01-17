@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  device = "/dev/disk/by-uuid/962628ce-4388-424f-b246-99d1967cd72b"; 
+  cfg = config.service.btrfsAutoSnapshot;
 
   snapshotAges = [
     3600        # 1h
@@ -24,7 +24,7 @@ let
     NOW=$(date +%s)
 
     mkdir -p "$ROOT"
-    mount -o subvolid=5 ${device} "$ROOT"
+    mount -o subvolid=5 ${cfg.device} "$ROOT"
     mkdir -p "$ROOT/$SNAPDIR"
 
     ts=$(date +"%Y-%m-%dT%H:%M:%S")
@@ -64,29 +64,41 @@ let
   '';
 in
 {
-  systemd.services.btrfs-auto-snapshot = {
-    description = "Btrfs automatic snapshots (@ and @home)";
-    serviceConfig = {
-      Type = "oneshot";
+  options.service.btrfsAutoSnapshot = {
+    enable = lib.mkEnableOption "Btrfs automatic snapshots (@ and @home)";
+
+    device = lib.mkOption {
+      type = lib.types.str;
+      example = "/dev/disk/by-uuid/962628ce-4388-424f-b246-99d1967cd72b";
+      description = "Block device path used for snapshot.";
     };
-
-    path = with pkgs; [
-      btrfs-progs
-      coreutils
-      util-linux
-      gawk
-    ];
-
-    script = ''
-      exec ${snapshotScript}
-    '';
   };
 
-  systemd.timers.btrfs-auto-snapshot = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnCalendar = "hourly";
-      Persistent = true;
+  config = lib.mkIf cfg.enable {
+    systemd.services.btrfs-auto-snapshot = {
+      description = "Btrfs automatic snapshots (@ and @home)";
+      serviceConfig = {
+        Type = "oneshot";
+      };
+
+      path = with pkgs; [
+        btrfs-progs
+        coreutils
+        util-linux
+        gawk
+      ];
+
+      script = ''
+        exec ${snapshotScript}
+      '';
+    };
+
+    systemd.timers.btrfs-auto-snapshot = {
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar = "hourly";
+        Persistent = true;
+      };
     };
   };
 }
