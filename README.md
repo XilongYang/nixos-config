@@ -17,6 +17,7 @@
 │   │   │   ├── home.nix
 │   │   │   └── modules
 │   │   │       ├── git.nix
+│   │   │       ├── nvim.nix
 │   │   │       ├── ssh.nix
 │   │   │       └── zsh.nix
 │   │   └── os.d
