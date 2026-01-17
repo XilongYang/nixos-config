@@ -7,79 +7,35 @@
     # Base
     alsa-utils
     android-tools
-    appimage-run
-    bochs
     brightnessctl
-    clang-tools
-    cloc
-    cmake
-    dev86
-    docker-compose
-    findutils
-    gcc
-    gdb
-    ghc
-    git
-    git-filter-repo
-    gnumake
-    gnupg
     hypridle
     hyprlock
     hyprpaper
     hyprpolkitagent
     hyprshot
-    jq
     libnotify
-    linux-firmware
     mako
-    mandoc
-    nodejs
-    ntfs3g
-    openssh
-    openssl
-    p7zip
-    pass
     pandoc
-    pinentry-curses
-    powertop
-    python3
-    pipx
-    rclone
-    sof-firmware
-    tree
     where-is-my-sddm-theme
-    unrar
-    unzip
-    vim
-    wget
     wl-clipboard
     xorg.xhost
-    zsh
 
     # User
-    aria2
     adwaita-icon-theme
-    chez
-    cloudflared
-    fastfetch
-    gh
     gimp3
     goldendict-ng
     google-chrome
     graphviz
     foliate
-    kitty
     mpc
     mpd
     mpv
     musescore
     ncmpcpp
-    neovim
     nsxiv
     obs-studio
     qogir-theme
     qogir-icon-theme
-    rclone
     rofi
     sioyek
     telegram-desktop
@@ -94,17 +50,5 @@
     valent
     yazi
     zbar
-
-    #LSPs
-    clang-tools
-    jdt-language-server
-    pyright
-    nodePackages.bash-language-server
-    sqls
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted
-    haskell-language-server
-    lua-language-server
-    marksman
   ];
 }

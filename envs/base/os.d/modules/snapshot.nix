@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  device = "/dev/disk/by-uuid/5b68ea29-4079-4d6c-a3f0-d95c67bae2bc"; 
+  device = "/dev/disk/by-uuid/962628ce-4388-424f-b246-99d1967cd72b"; 
 
   snapshotAges = [
     3600        # 1h

@@ -1,33 +1,15 @@
 {
-  description = "Xilong's NixOS";
-
-  nixConfig = {
-    substituters = [
-      "https://cache.nixos.org"
-    ];
-  };
+  description = "Root router flake (delegates to env flakes)";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    desktop.url = "path:./envs/desktop";
+    server.url  = "path:./envs/server";
   };
-  
-  outputs = inputs@{nixpkgs, home-manager, ...} : {
-    nixosConfigurations = {
-      "nixos" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./os.d/os.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = false;
-            home-manager.users.xilong = import ./home.d/home.nix;
-          }
-        ]; 
-      };
-    }; 
+  outputs = { self, desktop, server, ... }: {
+    nixosConfigurations =
+      (desktop.nixosConfigurations or {})
+      // (server.nixosConfigurations or {});
   };
 }
+

@@ -1,8 +1,45 @@
 {
   "nodes": {
+    "desktop": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "path": "./envs/desktop",
+        "type": "path"
+      },
+      "original": {
+        "path": "./envs/desktop",
+        "type": "path"
+      },
+      "parent": []
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
+          "desktop",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768349483,
+        "narHash": "sha256-dlWl/z/rdZmPGVexkYL1VLKBMU1e5Y1DZmQfiRf60cQ=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "c5d67517bbcaf37e15c416219c965cc707a0ca24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_2": {
+      "inputs": {
+        "nixpkgs": [
+          "server",
           "nixpkgs"
         ]
       },
@@ -36,11 +73,42 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1768127708,
+        "narHash": "sha256-1Sm77VfZh3mU0F5OqKABNLWxOuDeHIlcFjsXeeiPazs=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ffbc9f8cbaacfb331b6017d5a5abb21a492c9a38",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "desktop": "desktop",
+        "server": "server"
       }
+    },
+    "server": {
+      "inputs": {
+        "home-manager": "home-manager_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "path": "./envs/server",
+        "type": "path"
+      },
+      "original": {
+        "path": "./envs/server",
+        "type": "path"
+      },
+      "parent": []
     }
   },
   "root": "root",
