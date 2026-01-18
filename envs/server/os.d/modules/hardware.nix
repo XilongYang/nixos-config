@@ -53,7 +53,17 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/data" =
+    { device = "/dev/disk/by-uuid/c69cbb08-2f85-4f1b-a50e-d415272c001e";
+      fsType = "ext4";
+      options = [ "noatime" ];
+    };
+
   swapDevices = [ ];
+
+  systemd.tmpfiles.rules = [
+    "d /data 0777 root root -"
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   virtualisation.hypervGuest.enable = true;
