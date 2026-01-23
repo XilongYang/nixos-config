@@ -1,6 +1,7 @@
 ## NixOS配置
 
 ```
+├── README.md
 ├── assets
 │   ├── icons
 │   │   └── mozc
@@ -58,6 +59,13 @@
 │   │       │   ├── qt.nix
 │   │       │   └── tlp.nix
 │   │       └── os.nix
+│   ├── mac
+│   │   ├── flake.nix
+│   │   └── home.d
+│   │       ├── home.nix
+│   │       └── modules
+│   │           ├── kitty.nix
+│   │           └── zsh.nix
 │   └── server
 │       ├── flake.lock
 │       ├── flake.nix
@@ -72,7 +80,6 @@
 │           │   └── sshd.nix
 │           └── os.nix
 ├── flake.lock
-├── flake.nix
-└── README.md
+└── flake.nix
 ```
 
