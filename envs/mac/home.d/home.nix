@@ -32,7 +32,10 @@
     pinentry_mac
     coreutils
     nodejs
+    ollama
   ];
+
+  services.ollama.enable = true;
 
   # macOS 上 GPG agent 走 pinentry-mac
   services.gpg-agent = {
