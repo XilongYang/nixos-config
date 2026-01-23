@@ -39,6 +39,27 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
+          "mac",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769122598,
+        "narHash": "sha256-0pll9tah1mpzzFWyZyDkDsMQyj3biMR6Kt9+tM76L0Q=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "64133886d980f06c39b2229fb8c3037fffde1d59",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager_3": {
+      "inputs": {
+        "nixpkgs": [
           "server",
           "nixpkgs"
         ]
@@ -56,6 +77,21 @@
         "repo": "home-manager",
         "type": "github"
       }
+    },
+    "mac": {
+      "inputs": {
+        "home-manager": "home-manager_2",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "path": "./envs/mac",
+        "type": "path"
+      },
+      "original": {
+        "path": "./envs/mac",
+        "type": "path"
+      },
+      "parent": []
     },
     "nixpkgs": {
       "locked": {
@@ -75,6 +111,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1768127708,
         "narHash": "sha256-1Sm77VfZh3mU0F5OqKABNLWxOuDeHIlcFjsXeeiPazs=",
         "owner": "NixOS",
@@ -92,13 +144,14 @@
     "root": {
       "inputs": {
         "desktop": "desktop",
+        "mac": "mac",
         "server": "server"
       }
     },
     "server": {
       "inputs": {
-        "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_2"
+        "home-manager": "home-manager_3",
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "path": "./envs/server",
