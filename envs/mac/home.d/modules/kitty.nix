@@ -46,5 +46,14 @@
         inactive_tab_font_style = "bold";
         tab_bar_background = "#101014";
     };
+
+    extraConfig = ''
+      map cmd+h send_text all \x08
+      map cmd+j send_text all \x0a
+      map cmd+k send_text all \x0b
+      map cmd+l send_text all \x0c
+      map cmd+a send_text all \x01
+      map cmd+e send_text all \x05
+    '';
   };
 }
