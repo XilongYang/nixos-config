@@ -33,6 +33,7 @@
     coreutils
     nodejs
     ollama
+    cloudflared
   ];
 
   services.ollama.enable = true;
