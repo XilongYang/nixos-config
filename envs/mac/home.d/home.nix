@@ -34,6 +34,7 @@
     nodejs
     ollama
     cloudflared
+    sshfs
  ];
 
   services.ollama.enable = true;
