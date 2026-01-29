@@ -25,6 +25,7 @@
       inherit pkgs;
       modules = [
         ./home.d/home.nix
+        ../base/home.d/home.nix
       ];
     };
   };

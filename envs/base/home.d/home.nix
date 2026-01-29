@@ -1,7 +1,6 @@
 {config, pkgs, lib, ...}:
 {
   home.username = "xilong";
-  home.homeDirectory = "/home/xilong";
   
   programs.direnv = {
     enable = true;

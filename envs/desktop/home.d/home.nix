@@ -1,6 +1,5 @@
 {config, pkgs, lib, ...}:
 {
-  home.username = "xilong";
   home.homeDirectory = "/home/xilong";
   home.sessionVariables = {
       XCURSOR_THEME = "Adwaita";

@@ -1,18 +1,11 @@
 { config, pkgs, lib, ... }:
 {
-  home.username = "xilong";
   home.homeDirectory = "/Users/xilong";
-
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 
-  imports = [
-    ../../base/home.d/modules/git.nix
-    ../../base/home.d/modules/nvim.nix
-    ../../base/home.d/modules/ssh.nix
-    ./modules/zsh.nix
-    ./modules/kitty.nix
-  ];
+  imports = let dir = ./modules;
+    in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
   programs.direnv = {
     enable = true;

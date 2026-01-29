@@ -1,15 +1,8 @@
 { config, pkgs, ... }:
 {
   programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
     shellAliases = {
-      vim = "nvim";
       ls  = "ls --color=auto";
-      pd = "curl -F \"c=@-\" \"https://fars.ee/\"";
     };
 
     # macOS 需要这个防止 gpg 弹窗抽风
@@ -21,12 +14,6 @@
       export CLICOLOR=1
       export LSCOLORS=...
     '';
-
-    oh-my-zsh = {
-      enable = true;
-      theme = "kardan";
-      plugins = ["git"];
-    };
   };
 }
 
