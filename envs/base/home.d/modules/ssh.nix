@@ -17,9 +17,8 @@
         controlPersist = "no";
       };
       "kaka" = {
-        hostname = "ssh.xilong.site";
+        hostname = "192.168.0.15";
         user = "xilong";
-        proxyCommand = "cloudflared access ssh --hostname %h";
       };
     };
   };
