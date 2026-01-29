@@ -34,6 +34,7 @@
     nodejs
     ollama
     cloudflared
+    cloudflare-warp
   ];
 
   services.ollama.enable = true;
