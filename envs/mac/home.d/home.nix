@@ -7,12 +7,6 @@
   imports = let dir = ./modules;
     in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
-  };
-
   home.packages = with pkgs; [
     git
     neovim
@@ -28,6 +22,12 @@
     ollama
     macism
  ];
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
+  };
 
   services.ollama.enable = true;
 

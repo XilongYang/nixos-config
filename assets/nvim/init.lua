@@ -1,0 +1,5 @@
+require("opts")
+require("key")
+require("lazy-loader")
+require("colorscheme")
+require("lsp")
