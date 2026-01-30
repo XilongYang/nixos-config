@@ -26,8 +26,7 @@
     coreutils
     nodejs
     ollama
-    cloudflared
-    sshfs
+    macism
  ];
 
   services.ollama.enable = true;
