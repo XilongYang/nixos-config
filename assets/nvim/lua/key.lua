@@ -17,7 +17,12 @@ vim.keymap.set('n', 'gP', ':BufferLinePickClose<CR>', {silent = true})
 vim.keymap.set('n', 'gl', ':BufferLineCycleNext<CR>', {silent = true})
 vim.keymap.set('n', 'gh', ':BufferLineCyclePrev<CR>', {silent = true})
 
-vim.keymap.set('n', 'gx', ':ToggleTerm<CR>', {silent = true})
 
 vim.keymap.set("n", "ga", "<cmd>AerialToggle!<CR>")
 
+
+
+vim.keymap.set("n", "ge", vim.diagnostic.open_float, { silent = true })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { silent = true })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { silent = true })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { silent = true })

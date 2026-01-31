@@ -8,19 +8,39 @@
     in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
   home.packages = with pkgs; [
-    git
-    neovim
-    tmux
-    ripgrep
-    fd
-    jq
-    fzf
-    gnupg
-    pinentry_mac
+    bochs
+    chez
+    clang-tools
+    cloc
+    cmake
     coreutils
-    nodejs
-    ollama
+    fd
+    fzf
+    gcc
+    gdb
+    ghc
+    git
+    gnumake
+    gnupg
+    haskell-language-server
+    jdt-language-server
+    jq
+    jq
+    lua-language-server
     macism
+    marksman
+    neovim
+    nodejs
+    nodePackages.bash-language-server
+    nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted
+    ollama
+    pandoc
+    pinentry_mac
+    pyright
+    ripgrep
+    sqls
+    tmux
  ];
 
   programs.direnv = {
