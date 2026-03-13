@@ -16,10 +16,6 @@
         controlPath = "~/.ssh/master-%r@%n:%p";
         controlPersist = "no";
       };
-      "kaka" = {
-        hostname = "192.168.0.15";
-        user = "xilong";
-      };
     };
   };
 }
