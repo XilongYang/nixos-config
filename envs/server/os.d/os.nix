@@ -20,6 +20,9 @@
   # Enable the locate & updatedb
   services.locate.enable = true;
 
+  # Enable nix-ld
+  programs.nix-ld.enable = true;
+
   imports = let dir = ./modules;
     in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
 
