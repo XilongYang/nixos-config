@@ -12,7 +12,7 @@
       # 行为明确
       UsePAM = true;
       X11Forwarding = false;
-      AllowTcpForwarding = "no";  # server 默认不该给
+      AllowTcpForwarding = "yes";  # server 默认不该给
       AllowAgentForwarding = "no";
       
       # 稳定性
