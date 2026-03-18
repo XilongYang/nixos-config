@@ -30,9 +30,3 @@ vim.keymap.set('n', 'y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('n', 'yy', '"+yy', { noremap = true, silent = true })
 vim.keymap.set('v', 'y', '"+y', { noremap = true, silent = true })
 
--- p / P 从系统剪贴板粘贴
-vim.keymap.set('n', 'p', '"+p', { noremap = true, silent = true })
-vim.keymap.set('n', 'P', '"+P', { noremap = true, silent = true })
-vim.keymap.set('v', 'p', '"+p', { noremap = true, silent = true })
-vim.keymap.set('v', 'P', '"+P', { noremap = true, silent = true })
-
