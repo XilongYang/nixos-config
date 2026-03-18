@@ -1,5 +1,4 @@
 -- Hint: use `:h <option>` to figure out the meaning if needed
-vim.opt.clipboard = 'unnamedplus' -- use system clipboard
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.mouse = 'a' -- allow the mouse to be used in Nvim
 
@@ -32,3 +31,17 @@ vim.opt.undodir = vim.fn.expand("~/.local/state/nvim/undo//")
 -- Backup
 vim.opt.backup = true
 vim.opt.backupdir = vim.fn.expand("~/.local/state/nvim/backup//")
+
+-- Remote Clipboard
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+

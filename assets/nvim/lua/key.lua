@@ -20,9 +20,19 @@ vim.keymap.set('n', 'gh', ':BufferLineCyclePrev<CR>', {silent = true})
 
 vim.keymap.set("n", "ga", "<cmd>AerialToggle!<CR>")
 
-
-
 vim.keymap.set("n", "ge", vim.diagnostic.open_float, { silent = true })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { silent = true })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { silent = true })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { silent = true })
+
+-- y 走系统剪贴板
+vim.keymap.set('n', 'y', '"+y', { noremap = true, silent = true })
+vim.keymap.set('n', 'yy', '"+yy', { noremap = true, silent = true })
+vim.keymap.set('v', 'y', '"+y', { noremap = true, silent = true })
+
+-- p / P 从系统剪贴板粘贴
+vim.keymap.set('n', 'p', '"+p', { noremap = true, silent = true })
+vim.keymap.set('n', 'P', '"+P', { noremap = true, silent = true })
+vim.keymap.set('v', 'p', '"+p', { noremap = true, silent = true })
+vim.keymap.set('v', 'P', '"+P', { noremap = true, silent = true })
+
