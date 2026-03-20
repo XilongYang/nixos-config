@@ -64,10 +64,6 @@ local DATA = {
   { "item", "<C-s>", "Save file", "normal / insert" },
   { "item", "<C-c>", "Copy selection", "visual" },
   { "item", "<C-v>", "Paste", "insert" },
-  { "item", "y", "Copy to system clipboard" },
-  { "item", "yy", "Copy line to clipboard" },
-  { "item", "q", "Close panel" },
-  { "item", "<Esc>", "Close panel" },
 
   { "section", "BUFFERS (CUSTOM)" },
   { "item", "gh", "Previous buffer" },
