@@ -55,6 +55,10 @@
       map cmd+a send_text all \x01
       map cmd+e send_text all \x05
       map cmd+s send_text all \x13
+      map cmd+w send_text all \x17
+      map cmd+b send_text all \x02
+      map cmd+f send_text all \x06
+      map cmd+y send_text all \x19
     '';
   };
 }
