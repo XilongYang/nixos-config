@@ -54,6 +54,7 @@
       map cmd+l send_text all \x0c
       map cmd+a send_text all \x01
       map cmd+e send_text all \x05
+      map cmd+s send_text all \x13
     '';
   };
 }
