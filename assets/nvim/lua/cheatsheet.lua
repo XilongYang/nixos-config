@@ -112,6 +112,18 @@ local DATA = {
   { "item", "<C-w>o", "Close others" },
   { "item", "<C-w>=", "Equalize size" },
 
+  { "section", "MACROS" },
+  { "item", "qa ... q", "Record macro into register a" },
+  { "item", "@a", "Replay macro a" },
+  { "item", "@@", "Replay last macro" },
+  { "item", "N@a", "Replay macro a N times" },
+  { "item", ":reg / :reg a", "Inspect registers / macro content" },
+
+  { "section", "MACRO NOTES" },
+  { "note", "Best for repetitive edits across many similar lines" },
+  { "note", "Record once, verify once, then replay with count" },
+  { "note", "Prefer simple, deterministic cursor motions" },
+
   { "section", "NOTES" },
   { "note", "Leader is Space" },
   { "note", "LSP only works when attached" },
@@ -119,7 +131,7 @@ local DATA = {
   { "note", "Buffer = file, Window = viewport" },
 
   { "section", "OPEN" },
-  { "item", "<leader>hk", "Open this panel" },
+  { "item", "<leader>h", "Open this panel" },
 }
 
 -- ============================================================================

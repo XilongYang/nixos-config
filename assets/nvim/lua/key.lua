@@ -31,7 +31,7 @@ vim.keymap.set('n', 'yy', '"+yy', { noremap = true, silent = true })
 vim.keymap.set('v', 'y', '"+y', { noremap = true, silent = true })
 
 -- 打开操作提示
-vim.keymap.set("n", "<leader>hk", function()
+vim.keymap.set("n", "<leader>h", function()
   require("cheatsheet").open()
 end, { desc = "Open floating cheat sheet" })
 
