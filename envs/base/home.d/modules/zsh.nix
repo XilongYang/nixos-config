@@ -12,6 +12,7 @@
     };
     initContent = ''
       PATH=$PATH:$HOME/.local/bin
+      stty -ixon
     '';
     oh-my-zsh = {
       enable = true;
