@@ -20,16 +20,13 @@ local DATA = {
   { "item", "<leader>ca", "Code action", "normal/visual" },
   { "item", "<leader>f", "Format buffer" },
 
-  { "section", "AI / COPILOT" },
-  { "item", "<leader>at", "Toggle chat" },
-  { "item", "<leader>ax", "Reset chat" },
-  { "item", "<leader>am", "Model select" },
-  { "item", "<leader>ap", "Prompt select" },
-  { "item", "<leader>aq", "Quick chat" },
+  { "section", "AI / Agentic + CodeX" },
+  { "item", "<leader>at", "Toggle Agentic panel" },
+  { "item", "<leader>an", "New Agentic session" },
+  { "item", "<leader>af", "Add current file to session" },
 
   { "section", "AI (VISUAL)" },
-  { "item", "<leader>ae", "Explain", "select first" },
-  { "item", "<leader>ac", "Comments", "select first" },
+  { "item", "<leader>as", "Add selection to session", "select first" },
 
   { "section", "COMPLETION" },
   { "item", "<Tab>", "Accept / jump" },
@@ -126,7 +123,7 @@ local DATA = {
   { "section", "NOTES" },
   { "note", "Leader is Space" },
   { "note", "LSP only works when attached" },
-  { "note", "AI is visual-mode driven" },
+  { "note", "AI uses Agentic.nvim with codex-acp" },
   { "note", "Buffer = file, Window = viewport" },
 
   { "section", "OPEN" },

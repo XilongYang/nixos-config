@@ -13,7 +13,7 @@ add("plugins.common.bufferline")
 add("plugins.common.colorizer")
 add("plugins.common.nvim-tree")
 add("plugins.common.tokyonight")
-add("plugins.common.copilot")
+add("plugins.common.agentic")
 
 if (vim.uv or vim.loop).os_uname().sysname == "Darwin" then
   add("plugins.mac.im-select")
