@@ -1,9 +1,7 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 require("lsp-keymap")
 require("opts")
 require("key")
 require("lazy-loader")
 require("colorscheme")
 require("lsp-enable")
+require("cheatsheet")
