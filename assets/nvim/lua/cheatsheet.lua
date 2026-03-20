@@ -21,19 +21,15 @@ local DATA = {
   { "item", "<leader>f", "Format buffer" },
 
   { "section", "AI / COPILOT" },
-  { "item", "<leader>aa", "Toggle chat" },
+  { "item", "<leader>at", "Toggle chat" },
   { "item", "<leader>ax", "Reset chat" },
   { "item", "<leader>am", "Model select" },
   { "item", "<leader>ap", "Prompt select" },
   { "item", "<leader>aq", "Quick chat" },
 
   { "section", "AI (VISUAL)" },
-  { "item", "<leader>ad", "Docs", "select first" },
   { "item", "<leader>ae", "Explain", "select first" },
-  { "item", "<leader>at", "Tests", "select first" },
   { "item", "<leader>ac", "Comments", "select first" },
-  { "item", "<leader>ar", "README", "select first" },
-  { "item", "<leader>ab", "Brief explain", "select first" },
 
   { "section", "COMPLETION" },
   { "item", "<Tab>", "Accept / jump" },
@@ -47,18 +43,18 @@ local DATA = {
   { "item", "<C-y>", "Toggle signature" },
 
   { "section", "AERIAL" },
-  { "item", "ga", "Toggle outline" },
+  { "item", "<leader>aa", "Toggle outline" },
   { "item", "{", "Previous symbol", "Aerial only" },
   { "item", "}", "Next symbol", "Aerial only" },
 
   { "section", "DIAGNOSTICS" },
-  { "item", "ge", "Show float" },
-  { "item", "[d", "Previous diagnostic" },
-  { "item", "]d", "Next diagnostic" },
-  { "item", "<leader>q", "To loclist" },
+  { "item", "<leader>et", "Show float" },
+  { "item", "<leader>ep", "Previous diagnostic" },
+  { "item", "<leader>en", "Next diagnostic" },
+  { "item", "<leader>eq", "To loclist" },
 
   { "section", "NVIM TREE" },
-  { "item", "gt", "Toggle NvimTree" },
+  { "item", "<leader>tt", "Toggle NvimTree" },
   { "item", "<CR>", "Open file / enter dir" },
   { "item", "o", "Open file (same as <CR>)" },
   { "item", "v", "Open in vertical split" },
@@ -80,10 +76,13 @@ local DATA = {
   { "item", "<C-v>", "Paste", "insert" },
 
   { "section", "BUFFERS (CUSTOM)" },
-  { "item", "gh", "Previous buffer" },
-  { "item", "gl", "Next buffer" },
-  { "item", "gp", "Pick buffer" },
-  { "item", "gP", "Pick & close buffer" },
+  { "item", "<leader>h", "Previous buffer" },
+  { "item", "<leader>l", "Next buffer" },
+  { "item", "<leader>p", "Pick buffer" },
+  { "item", "<leader>P", "Pick & close buffer" },
+  { "item", "<leader>bO", "Close all other buffer" },
+  { "item", "<leader>bH", "Close all left buffer" },
+  { "item", "<leader>bL", "Close all right buffer" },
 
   { "section", "BUFFERS (BUILT-IN)" },
   { "item", ":ls", "List buffers" },
@@ -131,7 +130,7 @@ local DATA = {
   { "note", "Buffer = file, Window = viewport" },
 
   { "section", "OPEN" },
-  { "item", "<leader>h", "Open this panel" },
+  { "item", "<leader>H", "Open this panel" },
 }
 
 -- ============================================================================

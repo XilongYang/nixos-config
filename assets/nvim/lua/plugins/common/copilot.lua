@@ -27,7 +27,6 @@ return {
         width = 0.42,
       },
 
-      -- 文档类 prompt，不瞎写业务逻辑
       prompts = {
         DocsEnglish = {
           prompt = table.concat({
@@ -38,24 +37,6 @@ return {
             "- Keep it practical and suitable for production code.",
           }, "\n"),
           description = "Generate English doc comments",
-        },
-
-        ReadmeDraft = {
-          prompt = table.concat({
-            "Generate a concise technical README draft based on the selected code/context.",
-            "Include:",
-            "- purpose",
-            "- build/run instructions if inferable",
-            "- key modules",
-            "- usage example if inferable",
-            "Do not invent missing facts.",
-          }, "\n"),
-          description = "Generate README draft",
-        },
-
-        ExplainBrief = {
-          prompt = "Explain the selected code briefly and directly. Focus on structure, data flow, and important caveats.",
-          description = "Brief explanation",
         },
       },
     },
@@ -68,14 +49,8 @@ return {
       { "<leader>ap", "<cmd>CopilotChatPrompts<cr>", desc = "AI Select Prompt" },
 
       -- 选中代码后直接干活
-      { "<leader>ad", "<cmd>CopilotChatDocs<cr>", desc = "AI Builtin Docs", mode = "x" },
       { "<leader>ae", "<cmd>CopilotChatExplain<cr>", desc = "AI Explain", mode = "x" },
-      { "<leader>at", "<cmd>CopilotChatTests<cr>", desc = "AI Tests", mode = "x" },
-
-      -- 自定义 prompt
       { "<leader>ac", "<cmd>CopilotChatDocsEnglish<cr>", desc = "AI English Comments", mode = "x" },
-      { "<leader>ar", "<cmd>CopilotChatReadmeDraft<cr>", desc = "AI README Draft", mode = "x" },
-      { "<leader>ab", "<cmd>CopilotChatExplainBrief<cr>", desc = "AI Brief Explain", mode = "x" },
 
       -- 不选中时，也能快速提问
       {
