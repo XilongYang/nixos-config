@@ -43,7 +43,7 @@ return {
 
     keys = {
       -- 聊天窗口
-      { "<leader>aa", "<cmd>CopilotChatToggle<cr>", desc = "AI Chat Toggle" },
+      { "<leader>at", "<cmd>CopilotChatToggle<cr>", desc = "AI Chat Toggle" },
       { "<leader>ax", "<cmd>CopilotChatReset<cr>",  desc = "AI Chat Reset" },
       { "<leader>am", "<cmd>CopilotChatModels<cr>", desc = "AI Select Model" },
       { "<leader>ap", "<cmd>CopilotChatPrompts<cr>", desc = "AI Select Prompt" },
