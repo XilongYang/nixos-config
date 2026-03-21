@@ -49,6 +49,8 @@
     gh
     kitty
     neovim
+    codex
+    codex-acp
 
     #LSPs
     jdt-language-server
