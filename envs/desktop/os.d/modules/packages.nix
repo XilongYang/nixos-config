@@ -18,7 +18,7 @@
     pandoc
     where-is-my-sddm-theme
     wl-clipboard
-    xorg.xhost
+    xhost
 
     # User
     adwaita-icon-theme

@@ -78,7 +78,7 @@ in
     settings = {
       General = {
         DisplayCommand = "${pkgs.writeShellScript "sddm-display-setup" ''
-          ${pkgs.xorg.xrandr}/bin/xrandr \
+          ${pkgs.xrandr}/bin/xrandr \
             --output eDP-1 --primary --mode 2880x1800 --pos 0x0 \
             --output DP-1 --off
         ''}";
