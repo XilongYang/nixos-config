@@ -21,6 +21,8 @@ in
     neovim
     pinentry_mac
     ripgrep
+    codex
+    codex-acp
  ];
 
   # macOS 上 GPG agent 走 pinentry-mac
