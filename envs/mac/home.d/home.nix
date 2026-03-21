@@ -15,27 +15,13 @@ in
   imports = builtins.map (name: dir + "/${name}") sorted;
 
   home.packages = with pkgs; [
-    clang-tools
-    cloc
     coreutils
-    ghc
     git
     macism
     neovim
-    nodejs
-    ollama
     pinentry_mac
-    pyright
     ripgrep
  ];
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-    nix-direnv.enable = true;
-  };
-
-  services.ollama.enable = true;
 
   # macOS 上 GPG agent 走 pinentry-mac
   services.gpg-agent = {
