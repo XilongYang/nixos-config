@@ -13,6 +13,7 @@
     initContent = ''
       PATH=$PATH:$HOME/.local/bin
       stty -ixon
+      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#6b7280'
     '';
     oh-my-zsh = {
       enable = true;
