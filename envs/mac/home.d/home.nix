@@ -15,38 +15,18 @@ in
   imports = builtins.map (name: dir + "/${name}") sorted;
 
   home.packages = with pkgs; [
-    bochs
-    chez
     clang-tools
     cloc
-    cmake
     coreutils
-    fd
-    fzf
-    gcc
-    gdb
     ghc
     git
-    gnumake
-    gnupg
-    haskell-language-server
-    jdt-language-server
-    jq
-    lua-language-server
     macism
-    marksman
     neovim
     nodejs
-    nodePackages.bash-language-server
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted
     ollama
-    pandoc
     pinentry_mac
     pyright
     ripgrep
-    sqls
-    tmux
  ];
 
   programs.direnv = {
