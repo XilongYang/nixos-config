@@ -49,10 +49,8 @@
     gh
     kitty
     neovim
-    rclone
 
     #LSPs
-    clang-tools
     jdt-language-server
     pyright
     nodePackages.bash-language-server

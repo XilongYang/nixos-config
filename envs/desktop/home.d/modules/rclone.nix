@@ -12,7 +12,7 @@
     
     Service = {
      Type = "oneshot";
-     ExecStart = "/home/xilong/.config/scripts/rclone-sync.sh"; 
+     ExecStart = "${config.home.homeDirectory}/.config/scripts/rclone-sync.sh"; 
      Environment = [
        "PATH=${lib.makeBinPath [ pkgs.rclone pkgs.gnupg pkgs.coreutils pkgs.findutils pkgs.bash ]}"
      ];

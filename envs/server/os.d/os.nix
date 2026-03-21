@@ -2,7 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
+let
+  dir = ./modules;
+  entries = if builtins.pathExists dir then builtins.readDir dir else {};
+  names = builtins.filter (name:
+    entries.${name} == "regular" && lib.hasSuffix ".nix" name
+  ) (builtins.attrNames entries);
+  sorted = lib.sort (a: b: a < b) names;
+in
 
 {
   environment.variables.EDITOR = "nvim";
@@ -23,8 +31,7 @@
   # Enable nix-ld
   programs.nix-ld.enable = true;
 
-  imports = let dir = ./modules;
-    in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
+  imports = builtins.map (name: dir + "/${name}") sorted;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -34,4 +41,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 }
-

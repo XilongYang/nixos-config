@@ -8,7 +8,7 @@
     Service = {
      Type = "oneshot";
      ExecStart = ''
-        /home/xilong/Notes/scripts/commit.sh
+        ${config.home.homeDirectory}/Notes/scripts/commit.sh
       '';
     };
   };

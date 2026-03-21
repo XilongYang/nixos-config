@@ -1,6 +1,14 @@
-{config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
+let
+  dir = ./modules;
+  entries = if builtins.pathExists dir then builtins.readDir dir else {};
+  names = builtins.filter (name:
+    entries.${name} == "regular" && lib.hasSuffix ".nix" name
+  ) (builtins.attrNames entries);
+  sorted = lib.sort (a: b: a < b) names;
+in
 {
-  home.homeDirectory = "/home/xilong";
+  home.homeDirectory = "/home/${config.home.username}";
   home.sessionVariables = {
       XCURSOR_THEME = "Adwaita";
       XCURSOR_SIZE  = "24";
@@ -31,8 +39,7 @@
     nix-direnv.enable = true;
   };
 
-  imports = let dir = ./modules;
-    in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
+  imports = builtins.map (name: dir + "/${name}") sorted;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

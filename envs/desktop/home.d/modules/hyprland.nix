@@ -3,7 +3,7 @@
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     wallpaper {
         monitor = 
-        path = /home/xilong/Pictures/Wallpaper/totoro.png
+        path = ${config.home.homeDirectory}/Pictures/Wallpaper/totoro.png
         fit_mode = cover
     }
 
@@ -52,8 +52,8 @@
     bind = $mod, RETURN, exec, kitty
     bind = $mod, E, exec, kitty yazi
     bind = $mod, R, exec, rofi -show drun -show-icons
-    bind = $mod SHIFT, S, exec, hyprshot -z -m region -o /home/xilong/Pictures/Screenshots/
-    bind = $mod, Print, exec, hyprshot -m output -o /home/xilong/Pictures/Screenshots/
+    bind = $mod SHIFT, S, exec, hyprshot -z -m region -o ${config.home.homeDirectory}/Pictures/Screenshots/
+    bind = $mod, Print, exec, hyprshot -m output -o ${config.home.homeDirectory}/Pictures/Screenshots/
     bind = ALT, S, resizeactive,
     bind = $mod, Q, killactive,
     

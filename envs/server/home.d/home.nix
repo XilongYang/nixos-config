@@ -11,10 +11,9 @@ let
   sorted = lib.sort (a: b: a < b) names;
 in
 {
-  home.homeDirectory = "/home/xilong";
+  home.homeDirectory = "/home/${config.home.username}";
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 
   imports = builtins.map (name: dir + "/${name}") sorted;
 }
-

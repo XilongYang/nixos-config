@@ -1,11 +1,18 @@
 { config, pkgs, lib, ... }:
+let
+  dir = ./modules;
+  entries = if builtins.pathExists dir then builtins.readDir dir else {};
+  names = builtins.filter (name:
+    entries.${name} == "regular" && lib.hasSuffix ".nix" name
+  ) (builtins.attrNames entries);
+  sorted = lib.sort (a: b: a < b) names;
+in
 {
-  home.homeDirectory = "/Users/xilong";
+  home.homeDirectory = "/Users/${config.home.username}";
   home.stateVersion = "23.11";
   programs.home-manager.enable = true;
 
-  imports = let dir = ./modules;
-    in builtins.map (name: dir + "/${name}") (builtins.attrNames (builtins.readDir dir));
+  imports = builtins.map (name: dir + "/${name}") sorted;
 
   home.packages = with pkgs; [
     bochs
@@ -24,7 +31,6 @@
     gnupg
     haskell-language-server
     jdt-language-server
-    jq
     jq
     lua-language-server
     macism
@@ -60,4 +66,3 @@
     maxCacheTtl = 604800;
   };
 }
-

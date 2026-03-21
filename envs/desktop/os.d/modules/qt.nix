@@ -12,7 +12,6 @@
     qtwayland
     qt5compat
     qtdeclarative
-    qtwayland
     qtsvg
     qtmultimedia
     qtstyleplugin-kvantum
