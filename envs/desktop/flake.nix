@@ -1,5 +1,5 @@
 {
-  description = "Xilong's Server";
+  description = "Xilong's Desktop";
 
   nixConfig = {
     substituters = [
