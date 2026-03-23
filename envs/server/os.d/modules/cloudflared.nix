@@ -1,16 +1,26 @@
-{config, pkgs, lib, ... } :
+{ config, pkgs, ... }:
 {
-  services.cloudflared = {
-    enable = true;
+  systemd.services.cloudflared = {
+    description = "Cloudflare Tunnel";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
 
-    tunnels."c7c3f517-874c-47db-8dbe-b507d44070fc" = {
-      credentialsFile = "/var/lib/cloudflared/c7c3f517-874c-47db-8dbe-b507d44070fc.json";
+    serviceConfig = {
+      Type = "simple";
 
-      ingress = {
-        "ssh.xilong.site" = "ssh://localhost:22";
-      };
+      # 从文件加载 token
+      EnvironmentFile = "/etc/cloudflared-tunnel-token";
 
-      default = "http_status:404";
+      ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel run --token $CF_TOKEN";
+
+      Restart = "always";
+      RestartSec = 5;
+
+      # 安全一点（可选）
+      DynamicUser = true;
+      NoNewPrivileges = true;
     };
+
+    wantedBy = [ "multi-user.target" ];
   };
 }
