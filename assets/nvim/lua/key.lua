@@ -20,7 +20,7 @@ vim.keymap.set('n', '<leader>h', ':BufferLineCyclePrev<CR>', {silent = true})
 vim.keymap.set('n', '<leader>bh', ':BufferLineMovePrev<CR>', { silent = true, desc = 'Move buffer left' })
 vim.keymap.set('n', '<leader>bl', ':BufferLineMoveNext<CR>', { silent = true, desc = 'Move buffer right' })
 
-vim.keymap.set('n', '<leader>bo', ':BufferLineCloseOthers<CR>', { silent = true, desc = 'Close other buffers' })
+vim.keymap.set('n', '<leader>bO', ':BufferLineCloseOthers<CR>', { silent = true, desc = 'Close other buffers' })
 vim.keymap.set('n', '<leader>bH', ':BufferLineCloseLeft<CR>', { silent = true, desc = 'Close buffers to the left' })
 vim.keymap.set('n', '<leader>bL', ':BufferLineCloseRight<CR>', { silent = true, desc = 'Close buffers to the right' })
 
