@@ -33,6 +33,7 @@
     python3
     pipx
     rclone
+    ripgrep
     sof-firmware
     tree
     unrar
