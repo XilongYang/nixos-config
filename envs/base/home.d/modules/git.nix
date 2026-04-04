@@ -2,6 +2,7 @@
 {
   programs.git = {
     enable = true;
+    signing.format = "openpgp";
     settings = {
       user.name = "Xilong Yang";
       user.email = "contact@xilong.site";

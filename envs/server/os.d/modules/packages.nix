@@ -33,6 +33,6 @@
     codex-acp
 
     #LSPs
-    nodePackages.bash-language-server
+    bash-language-server
   ];
 }
