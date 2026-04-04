@@ -32,7 +32,10 @@
     codex
     codex-acp
 
-    #LSPs
+    #Common LSPs
     bash-language-server
+    lua-language-server
+    pyright
+    vscode-langservers-extracted
   ];
 }

@@ -1,87 +1,69 @@
 # NixOS Configuration
 
-This repository contains my personal Nix-based configuration for two active targets:
+Personal flake-based setup with two active targets:
 
-- `server`: a NixOS host configuration
-- `mac`: a standalone Home Manager profile for macOS
+- `server`: NixOS system + integrated Home Manager
+- `mac`: standalone Home Manager profile for macOS
 
-The repository is split into per-environment flakes under `envs/`, with shared defaults in `envs/base`.
+The root `flake.nix` is a small router that re-exports outputs from `envs/server` and `envs/mac`.
 
-## Design
-
-The layout follows a composition model:
-
-- `envs/base`: shared Home Manager defaults
-- `envs/server`: server-specific NixOS + Home Manager modules
-- `envs/mac`: macOS-specific Home Manager modules
-- `assets/nvim`: Neovim runtime config consumed by Home Manager modules
-
-The root [`flake.nix`](flake.nix) acts as a router that re-exports outputs from environment flakes.
-
-## Repository Layout
+## Structure
 
 ```text
 .
 ├── assets/
-│   └── nvim/
+│   └── nvim/                  # Shared Neovim config
 ├── envs/
 │   ├── base/
-│   │   └── home.d/
-│   ├── mac/
-│   │   ├── home.d/
+│   │   └── home.d/            # Shared Home Manager defaults
+│   ├── server/
+│   │   ├── home.d/            # Server-only Home Manager modules
+│   │   ├── os.d/              # NixOS modules
 │   │   └── flake.nix
-│   └── server/
-│       ├── home.d/
-│       ├── os.d/
+│   └── mac/
+│       ├── home.d/            # macOS-only Home Manager modules
 │       └── flake.nix
 ├── flake.nix
 └── README.md
 ```
 
-Within `home.d/modules` and `os.d/modules`, module files are imported dynamically from the directory to keep entry files small and composable.
+Both `home.d/modules` and `os.d/modules` are loaded dynamically (`*.nix`, sorted by filename).
 
-## What Is Included
+## Managed Scope
 
-This repository currently manages:
+- Server NixOS modules: boot, hardware, network, user, sshd, packages, cloudflared, gpg-agent, snapshot
+- Shared Home Manager defaults: `git`, `ssh`, `zsh`, `nvim`, `direnv`, GC settings
+- Server Home Manager modules: `tmux`
+- macOS Home Manager modules: `zsh`, `kitty`, mac-specific packages/services
+- Shared Neovim runtime in `assets/nvim`
 
-- core NixOS settings for the server target
-- user shell, Git, SSH, Neovim, and tmux via Home Manager
-- server-specific packages and services
-- a shared Neovim configuration under `assets/nvim`
+## Common Commands
 
-## Usage
+Run from repository root.
 
-Run all commands from the repository root.
-
-### Server (NixOS)
-
-Build and switch the server system:
+### Check / Evaluate
 
 ```bash
+nix flake show
+nix flake check
+```
+
+### Server (NixOS target)
+
+```bash
+sudo nixos-rebuild test --flake .#server
 sudo nixos-rebuild switch --flake .#server
 ```
 
-### macOS (Home Manager)
-
-Apply the Home Manager profile:
+### macOS (Home Manager target)
 
 ```bash
+home-manager build --flake .#mac
 home-manager switch --flake .#mac
 ```
 
-## Customization
-
-To adapt this repository to your own machines, the main places to change are:
-
-- host-specific system settings in `envs/server/os.d/modules`
-- user programs in `envs/<target>/home.d/modules`
-- shared defaults in `envs/base`
-- user name, home directory, and hardware-specific values
-
-This repo is intentionally opinionated and personal. Expect to replace identity, package selection, and service settings before using it directly.
-
 ## Notes
 
-- Both targets currently track `nixpkgs` from `nixos-unstable`.
-- Home Manager is integrated into the `server` NixOS flake.
-- The `mac` target is user-scoped only and does not manage the full operating system.
+- Both targets follow `nixpkgs` from `nixos-unstable`.
+- `server` embeds Home Manager via `home-manager.nixosModules.home-manager`.
+- `mac` is user-scoped only; it does not manage the full OS.

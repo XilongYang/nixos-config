@@ -7,18 +7,12 @@ local function add(mod)
   end
 end
 
-add("plugins.common.aerial")
-add("plugins.common.blink")
-add("plugins.common.bufferline")
-add("plugins.common.colorizer")
-add("plugins.common.nvim-tree")
-add("plugins.common.tokyonight")
-add("plugins.common.agentic")
-
-if (vim.uv or vim.loop).os_uname().sysname == "Darwin" then
-  add("plugins.mac.im-select")
-else
-  add("plugins.linux.fcitx")
-end
+add("plugins.aerial")
+add("plugins.blink")
+add("plugins.bufferline")
+add("plugins.colorizer")
+add("plugins.nvim-tree")
+add("plugins.tokyonight")
+add("plugins.agentic")
 
 return pluginList
