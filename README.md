@@ -1,41 +1,32 @@
 # NixOS Configuration
 
-This repository contains my personal Nix-based system configuration for three targets:
+This repository contains my personal Nix-based configuration for two active targets:
 
-- `desktop`: a full NixOS workstation setup
-- `server`: a leaner NixOS server profile
-- `mac`: a standalone Home Manager setup for macOS
+- `server`: a NixOS host configuration
+- `mac`: a standalone Home Manager profile for macOS
 
-The repo is organized as a small flake router at the top level and per-environment flakes under `envs/`. Shared configuration lives in `envs/base`, while each target adds its own operating system and user-level modules.
+The repository is split into per-environment flakes under `envs/`, with shared defaults in `envs/base`.
 
 ## Design
 
-The layout follows a simple composition model:
+The layout follows a composition model:
 
-- `envs/base`: shared NixOS and Home Manager defaults
-- `envs/desktop`: desktop-specific system and user modules
-- `envs/server`: server-specific system and user modules
-- `envs/mac`: macOS-only Home Manager configuration
-- `assets`: helper scripts, icons, and small runtime assets
+- `envs/base`: shared Home Manager defaults
+- `envs/server`: server-specific NixOS + Home Manager modules
+- `envs/mac`: macOS-specific Home Manager modules
+- `assets/nvim`: Neovim runtime config consumed by Home Manager modules
 
-The root [`flake.nix`](flake.nix) does not define systems itself. It re-exports outputs from the environment flakes so commands can be run from the repository root.
+The root [`flake.nix`](flake.nix) acts as a router that re-exports outputs from environment flakes.
 
 ## Repository Layout
 
 ```text
 .
 ├── assets/
-│   ├── icons/
-│   ├── scripts/
-│   └── sounds/
+│   └── nvim/
 ├── envs/
 │   ├── base/
-│   │   ├── home.d/
-│   │   └── os.d/
-│   ├── desktop/
-│   │   ├── home.d/
-│   │   ├── os.d/
-│   │   └── flake.nix
+│   │   └── home.d/
 │   ├── mac/
 │   │   ├── home.d/
 │   │   └── flake.nix
@@ -47,32 +38,22 @@ The root [`flake.nix`](flake.nix) does not define systems itself. It re-exports 
 └── README.md
 ```
 
-Within both `home.d/modules` and `os.d/modules`, modules are imported dynamically from the directory, which keeps the top-level entry files small and makes it easy to split configuration by concern.
+Within `home.d/modules` and `os.d/modules`, module files are imported dynamically from the directory to keep entry files small and composable.
 
 ## What Is Included
 
-Depending on the target, this repository manages things such as:
+This repository currently manages:
 
-- core NixOS settings and garbage collection
-- user shell, Git, SSH, and Neovim configuration through Home Manager
-- Hyprland-based desktop configuration
-- terminal and launcher tooling such as Kitty, Rofi, Waybar, and Yazi
-- desktop input, fonts, audio, power, and hardware-related options
-- server packages and services
+- core NixOS settings for the server target
+- user shell, Git, SSH, Neovim, and tmux via Home Manager
+- server-specific packages and services
+- a shared Neovim configuration under `assets/nvim`
 
 ## Usage
 
 Run all commands from the repository root.
 
-### Desktop
-
-Build and switch the desktop system:
-
-```bash
-sudo nixos-rebuild switch --flake .#desktop
-```
-
-### Server
+### Server (NixOS)
 
 Build and switch the server system:
 
@@ -80,7 +61,7 @@ Build and switch the server system:
 sudo nixos-rebuild switch --flake .#server
 ```
 
-### macOS
+### macOS (Home Manager)
 
 Apply the Home Manager profile:
 
@@ -90,17 +71,17 @@ home-manager switch --flake .#mac
 
 ## Customization
 
-If you want to adapt this repository for your own machines, the main places to change are:
+To adapt this repository to your own machines, the main places to change are:
 
-- host-specific system settings in `envs/<target>/os.d/modules`
+- host-specific system settings in `envs/server/os.d/modules`
 - user programs in `envs/<target>/home.d/modules`
 - shared defaults in `envs/base`
-- user name, home directory, and machine-specific hardware settings
+- user name, home directory, and hardware-specific values
 
-This repo is opinionated and personal by design. Expect to replace hardware definitions, user identity, themes, package selections, and service settings before using it as your own daily setup.
+This repo is intentionally opinionated and personal. Expect to replace identity, package selection, and service settings before using it directly.
 
 ## Notes
 
-- Linux targets use `nixpkgs` from `nixos-unstable`.
-- Home Manager is integrated into the NixOS configurations for `desktop` and `server`.
+- Both targets currently track `nixpkgs` from `nixos-unstable`.
+- Home Manager is integrated into the `server` NixOS flake.
 - The `mac` target is user-scoped only and does not manage the full operating system.
