@@ -22,6 +22,7 @@
     bash-language-server
     cloudflared
     neovim
+    nixd
     nodejs
     codex
     codex-acp
