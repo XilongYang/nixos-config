@@ -14,6 +14,7 @@ in
 
 {
   environment.variables.EDITOR = "nvim";
+  environment.enableAllTerminfo = true;
 
   # Use the Nix-Flakes and nix-command
   nix.settings.experimental-features = ["nix-command" "flakes"];

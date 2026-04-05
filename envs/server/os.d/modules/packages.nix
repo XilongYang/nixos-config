@@ -5,37 +5,25 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Base
+    curl
     git
     git-filter-repo
     gnupg
-    jq
-    kitty
-    mandoc
-    nodejs
     openssh
     openssl
-    p7zip
     pass
     pinentry-curses
-    python3
     ripgrep
     tree
     tmux
-    unzip
-    wget
     zsh
 
-    # User
+    # Application
+    bash-language-server
     cloudflared
-    fastfetch
     neovim
+    nodejs
     codex
     codex-acp
-
-    #Common LSPs
-    bash-language-server
-    lua-language-server
-    pyright
-    vscode-langservers-extracted
   ];
 }
