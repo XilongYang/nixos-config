@@ -1,3 +1,7 @@
+if vim.fn.executable("clangd") == 0 then
+  return nil
+end
+
 ---@type vim.lsp.Config
 return {
   cmd = {

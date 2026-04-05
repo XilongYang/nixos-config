@@ -1,3 +1,7 @@
+if vim.fn.executable("pyright-langserver") == 0 then
+  return nil
+end
+
 ---@type vim.lsp.Config
 return {
   cmd = { "pyright-langserver", "--stdio" },

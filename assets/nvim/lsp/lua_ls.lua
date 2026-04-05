@@ -1,3 +1,7 @@
+if vim.fn.executable("lua-language-server") == 0 then
+  return nil
+end
+
 ---@type vim.lsp.Config
 return {
   cmd = { "lua-language-server" },
