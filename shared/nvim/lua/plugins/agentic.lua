@@ -2,10 +2,10 @@ return {
   {
     "carlos-algms/agentic.nvim",
     opts = {
-      provider = "codex-acp",
+      provider = "claude-agent-acp",
       acp_providers = {
-        ["codex-acp"] = {
-          command = "codex-acp",
+        ["claude-agent-acp"] = {
+          command = "claude-agent-acp",
         },
       },
     },

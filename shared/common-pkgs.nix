@@ -3,8 +3,8 @@ with pkgs; [
   git
   neovim
   ripgrep
-  codex
-  codex-acp
+  claude-code
+  claude-agent-acp
   bash-language-server
   clang-tools
   haskell-language-server
