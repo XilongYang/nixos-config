@@ -7,5 +7,6 @@ in
     coreutils
     macism
     pinentry_mac
+    gnupg
   ]);
 }
