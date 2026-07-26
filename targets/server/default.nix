@@ -24,6 +24,7 @@
     ./config/virtualisation.nix
     ./services/btrfs-auto-snapshot.nix
     ./services/gpg-agent.nix
+    ./services/minecraft-bedrock.nix
     ./services/sshd.nix
   ];
 }
