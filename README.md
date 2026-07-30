@@ -9,8 +9,9 @@ Single-flake personal setup with two targets:
 
 The repository is split by responsibility:
 
-- `targets/`: concrete deployment targets
-- `shared/`: reusable modules, packages, and Neovim runtime
+- `targets/`: concrete deployment targets (Nix logic)
+- `shared/`: reusable Nix modules and packages
+- `files/`: raw, non-Nix source files (config and scripts) referenced by the modules
 
 ```text
 .
@@ -25,13 +26,27 @@ The repository is split by responsibility:
 │       └── services/
 ├── shared/
 │   ├── common-pkgs.nix
-│   ├── home-manager/
-│   │   ├── default.nix
-│   │   └── modules/
-│   └── nvim/
+│   └── home-manager/
+│       ├── default.nix
+│       └── modules/
+├── files/
+│   ├── mac/
+│   │   ├── karabiner/karabiner.json
+│   │   └── kitty/kitty-nvim-ime.py
+│   ├── server/
+│   │   ├── btrfs/btrfs-auto-snapshot.sh
+│   │   └── minecraft/bedrock.Dockerfile
+│   └── shared/
+│       └── nvim/
 ├── flake.nix
 └── README.md
 ```
+
+`files/` mirrors the `mac` / `server` / `shared` scoping of the Nix tree. It holds
+verbatim source in its native language — dotfiles that land in `~/.config`
+(nvim, karabiner) as well as scripts and a Dockerfile that Nix reads in as build
+inputs — so each file can be edited, highlighted, and linted on its own instead
+of living inside a Nix string.
 
 ## Entrypoints
 
@@ -58,7 +73,13 @@ The repository is split by responsibility:
 - `shared/home-manager/default.nix` imports the common Home Manager modules
 - `shared/home-manager/modules/` contains shared `git`, `ssh`, `zsh`, `nvim`, and base settings
 - `shared/common-pkgs.nix` contains shared development packages
-- `shared/nvim/` contains the Neovim runtime synced into Home Manager
+
+## Source Files
+
+- `files/shared/nvim/` holds the Neovim runtime (`init.lua`, `lua/`, `lsp/`) symlinked into Home Manager by `shared/home-manager/modules/nvim.nix`
+- `files/mac/` holds mac-only source: the Karabiner config and the kitty IME watcher
+- `files/server/` holds server-only source: the btrfs snapshot script and the Minecraft Bedrock Dockerfile
+- Modules pull these in via `builtins.readFile` / store-path references, substituting any Nix values through `@placeholder@` tokens so no import-from-derivation is needed
 
 ## Commands
 
@@ -97,4 +118,4 @@ Then re-apply the target you care about.
 - `server` uses `x86_64-linux`
 - `mac` uses `aarch64-darwin`
 - `server` applies the `kiln` overlay
-- Neovim plugin management is intentionally split: Nix distributes the config in `shared/nvim/`, while `lazy.nvim` resolves and downloads plugins at runtime
+- Neovim plugin management is intentionally split: Nix distributes the config in `files/shared/nvim/`, while `lazy.nvim` resolves and downloads plugins at runtime
