@@ -5,6 +5,7 @@
   imports = [
     ../../shared/home-manager
     ./modules/gpg-agent.nix
+    ./modules/karabiner.nix
     ./modules/kitty.nix
     ./modules/packages.nix
     ./modules/zsh.nix
