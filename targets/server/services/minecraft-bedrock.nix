@@ -31,15 +31,7 @@ in
     };
     script = ''
       if ! ${pkgs.docker}/bin/docker image inspect bedrock-ubuntu:latest &>/dev/null; then
-        ${pkgs.docker}/bin/docker build -t bedrock-ubuntu:latest - <<'DOCKERFILE'
-FROM ubuntu:22.04
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-      libssl3 libcurl4 ca-certificates && \
-    rm -rf /var/lib/apt/lists/*
-WORKDIR /srv/minecraft
-ENTRYPOINT ["./bedrock_server"]
-DOCKERFILE
+        ${pkgs.docker}/bin/docker build -t bedrock-ubuntu:latest - < ${../../../files/server/minecraft/bedrock.Dockerfile}
       fi
     '';
   };
