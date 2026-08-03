@@ -19,7 +19,6 @@
     ./config/hardware-configuration.nix
     ./config/networking.nix
     ./config/packages.nix
-    ./config/storage.nix
     ./config/users.nix
     ./config/virtualisation.nix
     ./services/btrbk.nix
