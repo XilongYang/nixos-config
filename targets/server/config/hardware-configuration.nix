@@ -49,7 +49,7 @@
   };
 
   fileSystems."/data/nix-backup" = {
-    device = "/dev/disk/by-uuid/9e6ca7b6-5e7c-4a2a-9b22-a1687458f9d6";
+    device = "/dev/disk/by-uuid/a3529437-8685-4124-b434-e56e7ea4694f";
     fsType = "btrfs";
     options = [ "noatime" "compress=zstd" ];
   };
