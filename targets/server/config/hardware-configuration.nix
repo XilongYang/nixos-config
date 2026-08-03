@@ -42,6 +42,18 @@
     options = [ "fmask=0022" "dmask=0022" ];
   };
 
+  fileSystems."/mnt/btrfs-root" = {
+    device = "/dev/disk/by-uuid/962628ce-4388-424f-b246-99d1967cd72b";
+    fsType = "btrfs";
+    options = [ "subvolid=5" "noatime" "compress=zstd" ];
+  };
+
+  fileSystems."/data/nix-backup" = {
+    device = "/dev/disk/by-uuid/9e6ca7b6-5e7c-4a2a-9b22-a1687458f9d6";
+    fsType = "btrfs";
+    options = [ "noatime" "compress=zstd" ];
+  };
+
   fileSystems."/data/apple/time-machine" = {
     device = "/dev/disk/by-uuid/5e75ea08-8398-4f3f-b353-4d03bea109ec";
     fsType = "ext4";

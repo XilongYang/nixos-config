@@ -22,7 +22,7 @@
     ./config/storage.nix
     ./config/users.nix
     ./config/virtualisation.nix
-    ./services/btrfs-auto-snapshot.nix
+    ./services/btrbk.nix
     ./services/gpg-agent.nix
     ./services/minecraft-bedrock.nix
     ./services/sshd.nix
