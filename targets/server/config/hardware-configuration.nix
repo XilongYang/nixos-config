@@ -42,6 +42,11 @@
     options = [ "fmask=0022" "dmask=0022" ];
   };
 
+  fileSystems."/data/apple/time-machine" = {
+    device = "/dev/disk/by-uuid/5e75ea08-8398-4f3f-b353-4d03bea109ec";
+    fsType = "ext4";
+  };
+
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

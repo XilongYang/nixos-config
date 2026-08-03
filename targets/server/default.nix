@@ -26,5 +26,6 @@
     ./services/gpg-agent.nix
     ./services/minecraft-bedrock.nix
     ./services/sshd.nix
+    ./services/time-machine.nix
   ];
 }
