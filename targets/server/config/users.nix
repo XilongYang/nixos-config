@@ -4,7 +4,7 @@
 
   users.users.xilong = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" "minecraft" ];
     shell = pkgs.zsh;
   };
 

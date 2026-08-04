@@ -36,6 +36,12 @@
     options = [ "subvol=@var_cache,compress=zstd,ssd,space_cache=v2,discard=async,noatime" ];
   };
 
+  fileSystems."/srv" = {
+  device = "/dev/disk/by-uuid/962628ce-4388-424f-b246-99d1967cd72b";
+  fsType = "btrfs";
+  options = [ "subvol=@srv,compress=zstd,ssd,space_cache=v2,discard=async,noatime" ];
+  };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/ADB9-3884";
     fsType = "vfat";

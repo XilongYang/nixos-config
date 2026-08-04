@@ -14,6 +14,7 @@
         subvolume = {
           "@"     = { target = "/data/nix-backup"; };
           "@home" = { target = "/data/nix-backup"; };
+          "@srv" = { target = "/data/nix-backup"; };
         };
       };
     };
