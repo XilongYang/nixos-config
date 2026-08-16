@@ -14,7 +14,7 @@ in
   programs.kitty = {
     enable = true;
     font = {
-      name = "JetBrains Mono";
+      name = "family='Maple Mono NF CN' postscript_name=MapleMono-NF-CN-Regular";
       size = 14;
     };
     settings = {
