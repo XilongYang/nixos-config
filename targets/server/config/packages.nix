@@ -8,6 +8,7 @@ in
   environment.systemPackages = commonPkgs ++ (with pkgs; [
     curl
     git-filter-repo
+    gcc
     gnupg
     openssh
     openssl
