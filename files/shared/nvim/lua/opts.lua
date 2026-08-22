@@ -49,3 +49,5 @@ vim.g.clipboard = {
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.opt.exrc = true
+
