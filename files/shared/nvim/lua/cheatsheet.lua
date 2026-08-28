@@ -27,6 +27,7 @@ local DATA = {
 
   { "section", "AI (VISUAL)" },
   { "item", "<leader>as", "Add selection to session", "select first" },
+  { "item", "<leader>aq", "Stop current generation" },
 
   { "section", "COMPLETION" },
   { "item", "<Tab>", "Accept / jump" },
