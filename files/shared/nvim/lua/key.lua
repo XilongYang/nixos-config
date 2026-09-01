@@ -36,6 +36,10 @@ vim.keymap.set('n', 'y', '"+y', { noremap = true, silent = true })
 vim.keymap.set('n', 'yy', '"+yy', { noremap = true, silent = true })
 vim.keymap.set('v', 'y', '"+y', { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>s", function()
+  require("grep").grep()
+end, { desc = "Global grep (float)", silent = true })
+
 -- 打开操作提示
 vim.keymap.set("n", "<leader>H", function()
   require("cheatsheet").open()

@@ -68,6 +68,9 @@ local DATA = {
   { "item", "x", "Cut file" },
   { "item", "p", "Paste (after copy)" },
 
+  { "section", "SEARCH" },
+  { "item", "<leader>s", "Global grep (float)" },
+
   { "section", "GENERAL" },
   { "item", "<C-s>", "Save file", "normal / insert" },
   { "item", "<C-c>", "Copy selection", "visual" },
