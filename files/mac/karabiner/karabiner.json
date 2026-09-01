@@ -320,7 +320,7 @@
                                 "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": {
-                                        "mandatory": ["left_command"],
+                                        "mandatory": ["command"],
                                         "optional": ["any"]
                                     }
                                 },
