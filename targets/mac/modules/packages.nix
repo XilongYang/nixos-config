@@ -8,5 +8,6 @@ in
     macism
     pinentry_mac
     gnupg
+    nodejs
   ]);
 }
